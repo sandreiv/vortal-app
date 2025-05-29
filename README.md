@@ -1,6 +1,6 @@
 # 📱 vortal-app
 
-Aplicación web desarrollada con Angular 19 que utiliza PrimeNG como kit de componentes, TailwindCSS para los estilos, y Prettier + ESLint para mantener una base de código limpia y consistente. Ideal como base para proyectos empresariales modernos.
+Aplicación web desarrollada con Angular 19 que utiliza PrimeNG como kit de componentes, TailwindCSS para los estilos, y Prettier + ESLint para mantener una base de código limpia y consistente.
 
 ---
 
