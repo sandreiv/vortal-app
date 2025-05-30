@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
     standalone: true,
     selector: 'app-best-selling-widget',
-    imports: [CommonModule],
+    imports: [],
     template: `<div class="card">
         <h5>Best Selling Products</h5>
         <div class="flex flex-column gap-3">

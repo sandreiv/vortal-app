@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
     standalone: true,
     selector: 'app-notifications-widget',
-    imports: [CommonModule],
+    imports: [],
     template: `<div class="card">
         <h5>Notifications</h5>
         <div class="flex flex-column gap-3">

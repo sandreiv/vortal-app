@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
     standalone: true,
     selector: 'app-revenue-stream-widget',
-    imports: [CommonModule],
+    imports: [],
     template: `<div class="card mb-4">
         <h5>Revenue Stream</h5>
         <div class="flex flex-column gap-3">
