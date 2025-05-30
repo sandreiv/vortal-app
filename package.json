@@ -25,6 +25,7 @@
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.0",
     "fullcalendar": "^6.1.17",
+    "node": "^22.16.0",
     "prettier-eslint": "^16.4.2",
     "primeclt": "^0.1.5",
     "primeflex": "^4.0.0",
@@ -41,7 +42,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.1.7",
-    "@angular/cli": "~19.1.7",
+    "@angular/cli": "^20.0.0",
     "@angular/compiler-cli": "^19.1.6",
     "@types/jasmine": "~4.3.0",
     "angular-eslint": "19.1.0",
