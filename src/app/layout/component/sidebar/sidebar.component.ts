@@ -6,6 +6,5 @@ import { AppMenuComponent } from '../menu/menu.component'
   standalone: true,
   imports: [AppMenuComponent],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent {}

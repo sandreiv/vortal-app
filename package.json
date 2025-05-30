@@ -24,6 +24,7 @@
     "date-fns": "^2.30.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.0",
+    "fullcalendar": "^6.1.17",
     "prettier-eslint": "^16.4.2",
     "primeclt": "^0.1.5",
     "primeflex": "^4.0.0",
