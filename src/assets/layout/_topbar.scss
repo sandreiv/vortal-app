@@ -4,12 +4,12 @@
     position: fixed;
     height: 4rem;
     z-index: 997;
-    left: 0;
+    left: 20rem;
     top: 0;
-    width: 100%;
+    width: calc(100% - 20rem);
     padding: 0 2rem;
     background-color: var(--surface-card);
-    transition: left var(--layout-section-transition-duration);
+    transition: left var(--layout-section-transition-duration), width var(--layout-section-transition-duration);
     display: flex;
     align-items: center;
 
@@ -156,5 +156,12 @@
         .layout-topbar-menu-content {
             flex-direction: column;
         }
+    }
+}
+
+.layout-static-inactive {
+    .layout-topbar {
+        left: 0;
+        width: 100%;
     }
 }
