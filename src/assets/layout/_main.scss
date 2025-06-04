@@ -1,20 +1,20 @@
 .layout-main-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: space-between;
-    padding: 6rem 2rem 0 2rem;
-    transition: padding-left var(--layout-section-transition-duration);
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  padding: 6rem 2rem 0 2rem;
+  transition: padding-left var(--layout-section-transition-duration);
+  box-sizing: border-box;
 }
 
 .layout-main {
-    flex: 1 1 auto;
-    padding-bottom: 2rem;
+  flex: 1 1 auto;
+  padding-bottom: 2rem;
 }
 
 .layout-static-inactive {
-    .layout-main-container {
-        padding-left: 2rem;
-    }
+  .layout-main-container {
+    padding-left: 2rem;
+  }
 }

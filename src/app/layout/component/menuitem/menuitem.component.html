@@ -15,9 +15,7 @@
       <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
       <span class="layout-menuitem-text">{{ item.label }}</span>
       @if (item.items) {
-        <i
-          class="pi pi-fw pi-angle-down layout-submenu-toggler"
-        ></i>
+        <i class="pi pi-fw pi-angle-down layout-submenu-toggler"></i>
       }
     </a>
   }
@@ -27,45 +25,42 @@
       [ngClass]="item.styleClass"
       [routerLink]="item.routerLink"
       routerLinkActive="active-route"
-    [routerLinkActiveOptions]="
-      item.routerLinkActiveOptions || {
-        paths: 'exact',
-        queryParams: 'ignored',
-        matrixParams: 'ignored',
-        fragment: 'ignored',
+      [routerLinkActiveOptions]="
+        item.routerLinkActiveOptions || {
+          paths: 'exact',
+          queryParams: 'ignored',
+          matrixParams: 'ignored',
+          fragment: 'ignored',
+        }
+      "
+      [fragment]="item.fragment"
+      [queryParamsHandling]="item.queryParamsHandling"
+      [preserveFragment]="item.preserveFragment"
+      [skipLocationChange]="item.skipLocationChange"
+      [replaceUrl]="item.replaceUrl"
+      [state]="item.state"
+      [queryParams]="item.queryParams"
+      [attr.target]="item.target"
+      tabindex="0"
+      pRipple>
+      <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
+      <span class="layout-menuitem-text">{{ item.label }}</span>
+      @if (item.items) {
+        <i class="pi pi-fw pi-angle-down layout-submenu-toggler"></i>
       }
-    "
-    [fragment]="item.fragment"
-    [queryParamsHandling]="item.queryParamsHandling"
-    [preserveFragment]="item.preserveFragment"
-    [skipLocationChange]="item.skipLocationChange"
-    [replaceUrl]="item.replaceUrl"
-    [state]="item.state"
-    [queryParams]="item.queryParams"
-    [attr.target]="item.target"
-    tabindex="0"
-    pRipple>
-    <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
-    <span class="layout-menuitem-text">{{ item.label }}</span>
-    @if (item.items) {
-      <i
-        class="pi pi-fw pi-angle-down layout-submenu-toggler"
-      ></i>
-    }
-  </a>
-}
+    </a>
+  }
 
-@if (item.items && item.visible !== false) {
-  <ul
-    [@children]="submenuAnimation">
-    @for (child of item.items; track child; let i = $index) {
-      <li
-        app-menuitem
-        [item]="child"
-        [index]="i"
-        [parentKey]="key"
-      [class]="child['badgeClass']"></li>
-    }
-  </ul>
-}
+  @if (item.items && item.visible !== false) {
+    <ul [@children]="submenuAnimation">
+      @for (child of item.items; track child; let i = $index) {
+        <li
+          app-menuitem
+          [item]="child"
+          [index]="i"
+          [parentKey]="key"
+          [class]="child['badgeClass']"></li>
+      }
+    </ul>
+  }
 </ng-container>

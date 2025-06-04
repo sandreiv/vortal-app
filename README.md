@@ -26,3 +26,4 @@ Asegúrate de tener instalado lo siguiente:
 
 ```bash
 npm install -g @angular/cli
+```
