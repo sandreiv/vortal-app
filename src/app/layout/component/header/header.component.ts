@@ -4,11 +4,11 @@ import { RouterModule } from '@angular/router'
 import { CommonModule } from '@angular/common'
 import { StyleClassModule } from 'primeng/styleclass'
 import { LayoutService } from '../../service/layout.service'
-
+import { ConfiguratorComponent } from '../configurator/configurator.component'
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule, CommonModule, StyleClassModule],
+  imports: [RouterModule, CommonModule, StyleClassModule, ConfiguratorComponent],
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {

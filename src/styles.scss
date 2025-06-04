@@ -2,3 +2,11 @@
 @use './assets/layout/layout.scss';
 @use 'primeicons/primeicons.css';
 @use './assets/demo/demo.scss';
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+}

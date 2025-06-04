@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core'
-
 import { RouterModule } from '@angular/router'
 import { MenuItem } from 'primeng/api'
 import { AppMenuitemComponent } from '../menuitem/menuitem.component'
+import { CommonModule } from '@angular/common'
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [AppMenuitemComponent, RouterModule],
+  imports: [CommonModule, AppMenuitemComponent, RouterModule],
   templateUrl: './menu.component.html',
 })
 export class AppMenuComponent implements OnInit {
@@ -55,7 +55,7 @@ export class AppMenuComponent implements OnInit {
         ],
       },
       {
-        label: 'apps',
+        label: 'Apps',
         items: [
           {
             label: 'WhatsApp',
@@ -83,28 +83,7 @@ export class AppMenuComponent implements OnInit {
             routerLink: ['/'],
           },
         ],
-      },
-      {
-        label: 'Configuración',
-        items: [
-          { label: 'Usuarios', icon: 'pi pi-fw pi-user', routerLink: ['/'] },
-          { label: 'Roles', icon: 'pi pi-fw pi-user', routerLink: ['/'] },
-        ],
-      },
-      {
-        label: 'Configuración',
-        items: [
-          { label: 'Usuarios', icon: 'pi pi-fw pi-user', routerLink: ['/'] },
-          { label: 'Roles', icon: 'pi pi-fw pi-user', routerLink: ['/'] },
-        ],
-      },
-      {
-        label: 'Configuración',
-        items: [
-          { label: 'Usuarios', icon: 'pi pi-fw pi-user', routerLink: ['/'] },
-          { label: 'Roles', icon: 'pi pi-fw pi-user', routerLink: ['/'] },
-        ],
-      },
+      }
     ]
   }
 }

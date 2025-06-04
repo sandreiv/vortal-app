@@ -1,4 +1,4 @@
-import { isPlatformBrowser } from '@angular/common'
+import { CommonModule, isPlatformBrowser } from '@angular/common'
 import {
   Component,
   computed,
@@ -54,7 +54,7 @@ interface MouseEvent {
 @Component({
   selector: 'app-configurator',
   standalone: true,
-  imports: [FormsModule, SelectButtonModule],
+  imports: [CommonModule, FormsModule, SelectButtonModule],
   template: ``,
   host: {
     class:

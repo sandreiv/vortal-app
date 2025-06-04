@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, OnInit, OnDestroy } from '@angular/core'
+import { Component, HostBinding, OnInit, OnDestroy, input } from '@angular/core'
 import { NavigationEnd, Router, RouterModule } from '@angular/router'
 import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Subscription } from 'rxjs'
@@ -9,8 +9,8 @@ import { MenuItem } from 'primeng/api'
 import { LayoutService } from '../../service/layout.service'
 
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
   selector: '[app-menuitem]',
+  standalone: true,
   imports: [CommonModule, RouterModule, RippleModule],
   templateUrl: './menuitem.component.html',
   animations: [
@@ -36,21 +36,15 @@ import { LayoutService } from '../../service/layout.service'
   providers: [LayoutService],
 })
 export class AppMenuitemComponent implements OnInit, OnDestroy {
-  @Input() item!: MenuItem
+  item = input.required<MenuItem>();
+  index = input.required<number>();
+  root = input.required<boolean>();
+  parentKey = input.required<string>();
 
-  @Input() index!: number
-
-  @Input() @HostBinding('class.layout-root-menuitem') root!: boolean
-
-  @Input() parentKey!: string
-
-  active = false
-
-  menuSourceSubscription: Subscription
-
-  menuResetSubscription: Subscription
-
-  key = ''
+  active = false;
+  menuSourceSubscription: Subscription;
+  menuResetSubscription: Subscription;
+  key = '';
 
   constructor(
     public router: Router,
@@ -85,24 +79,25 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
-        if (this.item.routerLink) {
+        if (this.item().routerLink) {
           this.updateActiveStateFromRoute()
         }
       })
   }
 
   ngOnInit() {
-    this.key = this.parentKey
-      ? this.parentKey + '-' + this.index
-      : String(this.index)
+    const parentKey = this.parentKey();
+    this.key = parentKey
+      ? parentKey + '-' + this.index()
+      : String(this.index())
 
-    if (this.item.routerLink) {
+    if (this.item().routerLink) {
       this.updateActiveStateFromRoute()
     }
   }
 
   updateActiveStateFromRoute() {
-    const activeRoute = this.router.isActive(this.item.routerLink[0], {
+    const activeRoute = this.router.isActive(this.item().routerLink[0], {
       paths: 'exact',
       queryParams: 'ignored',
       matrixParams: 'ignored',
@@ -115,19 +110,17 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
   }
 
   itemClick(event: Event) {
-    // avoid processing disabled items
-    if (this.item.disabled) {
+    const item = this.item();
+    if (item.disabled) {
       event.preventDefault()
       return
     }
 
-    // execute command
-    if (this.item.command) {
-      this.item.command({ originalEvent: event, item: this.item })
+    if (item.command) {
+      item.command({ originalEvent: event, item: item })
     }
 
-    // toggle active state
-    if (this.item.items) {
+    if (item.items) {
       this.active = !this.active
     }
 
@@ -135,12 +128,12 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
   }
 
   get submenuAnimation() {
-    return this.root ? 'expanded' : this.active ? 'expanded' : 'collapsed'
+    return this.root() ? 'expanded' : this.active ? 'expanded' : 'collapsed'
   }
 
   @HostBinding('class.active-menuitem')
   get activeClass() {
-    return this.active && !this.root
+    return this.active && !this.root()
   }
 
   ngOnDestroy() {
