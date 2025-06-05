@@ -5,7 +5,10 @@ import { MenuItemComponent } from '../../../shared/components/menu-item/menu-ite
   standalone: true,
   selector: 'app-revenue-stream-widget',
   imports: [CardControlsComponent, MenuItemComponent],
-  template: `<div class="card mb-4" [class.minimized]="isMinimized" [class.fullscreen]="isFullscreen">
+  template: `<div
+    class="card mb-4"
+    [class.minimized]="isMinimized"
+    [class.fullscreen]="isFullscreen">
     <div class="flex justify-between items-center mb-6">
       <h5>Revenue Stream</h5>
       <div class="flex items-center gap-2">
@@ -47,5 +50,4 @@ export class RevenueStreamWidgetComponent {
   onFullscreen() {
     this.isFullscreen = !this.isFullscreen
   }
-  
 }

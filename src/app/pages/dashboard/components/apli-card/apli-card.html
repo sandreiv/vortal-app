@@ -1,1 +1,13 @@
-<p>apli-card works!</p>
+<div class="col-span-12 lg:col-span-6 xl:col-span-3">
+    <div class="card square-card mb-0">
+        <div class="flex justify-center mb-4">
+            <img [src]="image()" alt="Logo" class="rounded-full w-24 h-24" />
+        </div>
+        <div class="text-center">
+            <span class="text-primary font-bold">{{ title() }}</span>
+            <br><br>
+            <span class="text-muted-color">{{ description() }}</span>
+        </div>
+    </div>
+</div>
+
