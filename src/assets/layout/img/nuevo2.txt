@@ -1,0 +1,1161 @@
+
+^C[tomcat@development1 ~]$ t8006 restart
+Reiniciando Tomcat 9 UP-SOPORTE-PUBLICO TEST ACADEMUSOFT::: 8006
+Using CATALINA_BASE:   /app02/services/tomcat/publicas/academusoft/t8006
+Using CATALINA_HOME:   /app02/services/tomcat/publicas/academusoft/t8006
+Using CATALINA_TMPDIR: /app02/services/tomcat/publicas/academusoft/t8006/temp
+Using JRE_HOME:        /app02/services/tomcat/publicas/academusoft/t8006/bin/libs/jdk1.8.0_271
+Using CLASSPATH:       /app02/services/tomcat/publicas/academusoft/t8006/bin/bootstrap.jar:/app02/services/tomcat/publicas/academusoft/t8006/bin/tomcat-juli.jar
+Using CATALINA_OPTS:   
+Using CATALINA_BASE:   /app02/services/tomcat/publicas/academusoft/t8006
+Using CATALINA_HOME:   /app02/services/tomcat/publicas/academusoft/t8006
+Using CATALINA_TMPDIR: /app02/services/tomcat/publicas/academusoft/t8006/temp
+Using JRE_HOME:        /app02/services/tomcat/publicas/academusoft/t8006/bin/libs/jdk1.8.0_271
+Using CLASSPATH:       /app02/services/tomcat/publicas/academusoft/t8006/bin/bootstrap.jar:/app02/services/tomcat/publicas/academusoft/t8006/bin/tomcat-juli.jar
+Using CATALINA_OPTS:   
+Tomcat started.
+[tomcat@development1 ~]$ t8006 salida
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+04-Jun-2025 16:24:58.881 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+
+Inicio la Ejecución del Servlet Fachada del modulo General.null
+Finalizo la Ejecución del Servlet Fachada del modulo General.null
+
+04-Jun-2025 16:25:00.548 INFORMACIÓN [main] org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.getObjectInstance Name = avanza Ignoring unknown property: value of "jdbc:oracle:thin:@172.26.2.110:1521:PRUGESPU" for "description" property
+04-Jun-2025 16:25:00.603 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+Inicio la Ejecución del Servlet Fachada de vortalAplicativo del modulo Hermesoft 2.1  - Vortal.null
+Finalizo la Ejecución del Servlet Fachada de vortalAplicativo del modulo Hermesoft 2.1  - Vortal.null
+04-Jun-2025 16:25:04.038 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+Se construye la claseszs : ListenerVerificarPagosLiquidacionGestasoft 
+Iniciando listener de ListenerVerificarPagosLiquidacionGestasoft............../app02/services/tomcat/publicas/academusoft/t8006/webapps/formacionIG//fichero/log/verificarPagosGestasfotListener/
+
+API ::> application = formacionIG/educacionContinuada/generacionliquidacion
+API ::> Recuperando properties del JAR ::> /formacionIG/educacionContinuada/generacionliquidacion/properties/oracle/pverificacionpagogestasoft.properties ..... OK
+consultarParametros : -  NO SE PUDO TRAER DE LA BASE DE DATOS, EL OBJETO CON LOS VALOES DEL PARAMETRO. pVerificacionPagoGestasoftVO [null]
+faltanXMinutos ::::+> 35
+::::+> SE DEBERIA MANDAR A DORMIR EL LISTENER POR [35] MINUTOS.
+
+
+esHoraDeEjecutar ::::+> false
+
+
+::::+> ENTRÓ AL RUN().
+
+Colocando en  marcha el temporizadorAlerta(timerTask, Wed Jun 04 16:25:04 COT 2025, 2100000)........
+
+ListenerVerificarPagosLiquidacionGestasoft iniciado..............
+
+consultarParametros : -  NO SE PUDO TRAER DE LA BASE DE DATOS, EL OBJETO CON LOS VALOES DEL PARAMETRO. pVerificacionPagoGestasoftVO [null]
+
+HORA DEL INSTANTE ::::+> 16:25
+-  HH : vecHHMM[0] : 16
+-  MM : vecHHMM[1] : 25
+
+numeroDePosicionesParaEjecutarHoras ::::+> 0
+numeroDePosicionesParaEjecutarHoras ::::+> 0
+faltanXMinutos ::::+> 35
+::::+> SE DEBERIA MANDAR A DORMIR EL LISTENER POR [35] MINUTOS.
+
+timerTask : ESTE HILO-1749072304783 Matando el temporizador..............
+timerTask : inicial Durmiendo HILO-1749072304783- del proceso durante : 2100 segundos.
+
+Inicio la Ejecución del Servlet Fachada de Reporte.
+Finalizo la Ejecución del Servlet Fachada de Reporte.
+Inicio la Ejecución del Servlet Fachada de vortalAplicativo del modulo Hermesoft 2.1  - Vortal.null
+Finalizo la Ejecución del Servlet Fachada de vortalAplicativo del modulo Hermesoft 2.1  - Vortal.null
+Inicio la Ejecución del Servlet Fachada del modulo SNIES - Academusoft 3.2 null
+Finalizo la Ejecución del Servlet Fachada del modulo SNIES - Academusoft 3.2  null
+04-Jun-2025 16:25:05.035 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+++++++++++++++++++++++++++++++++++++++++++++++++
+ITM configurador en: 60
+LTM configurador en: true
+++++++++++++++++++++++++++++++++++++++++++++++++
+--------------------------------------------
+Inicializando el Timer de Migracion.
+Timer de Migracion Inicializado.
+--------------------------------------------
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+04-Jun-2025 16:25:05.110 GRAVE [main] org.apache.catalina.session.StandardManager.startInternal Excepción cargando sesiones desde almacenamiento persistente
+	java.lang.ClassCastException: java.io.ObjectStreamClass cannot be cast to java.lang.String
+		at java.io.ObjectInputStream.readTypeString(ObjectInputStream.java:1745)
+		at java.io.ObjectStreamClass.readNonProxy(ObjectStreamClass.java:803)
+		at java.io.ObjectInputStream.readClassDescriptor(ObjectInputStream.java:961)
+		at java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1973)
+		at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1848)
+		at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2158)
+		at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1665)
+		at java.io.ObjectInputStream.readObject(ObjectInputStream.java:501)
+		at java.io.ObjectInputStream.readObject(ObjectInputStream.java:459)
+		at java.util.ArrayList.readObject(ArrayList.java:799)
+		at sun.reflect.GeneratedMethodAccessor54.invoke(Unknown Source)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:1185)
+		at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2294)
+		at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2185)
+		at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1665)
+		at java.io.ObjectInputStream.readObject(ObjectInputStream.java:501)
+		at java.io.ObjectInputStream.readObject(ObjectInputStream.java:459)
+		at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1587)
+		at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:1040)
+		at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:218)
+		at org.apache.catalina.session.StandardManager.load(StandardManager.java:162)
+		at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:354)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5194)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+ControllerPlantilla has been initialized
+<<<<<<<<<< SE SELECCIONÓ LA SIGUIENTE CARPETA PARA LAS PLANTILLAS  : unipamplona >>>>>>>>>>
+ControllerFuncionalidades has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerParticipante has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerEvaluacionDocente has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerPregunta has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerConfiguracion has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerPeriodo has been initialized
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/periodo.properties ..... OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/evaluaciondocente.properties ..... OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/encuestadocente.properties ..... OK
+MDTR: iniciando migracion de instrumentos por evaluacion.
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/instrumentodocente.properties ..... OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/encuestaparticipante.properties ..... OK
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerInstrumento has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente//dist-lte-3.0.0-rc.1/img/
+ControllerFondo has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerConfiguracionInstrumento has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerEscala has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerCategoria has been initialized
+ControllerEvaluadorEstudiante has been initialized
+ControllerEliminarEvaluaciones has been initialized
+ControllerEvaluadorParesAutoevaluacion has been initialized
+ControllerConsolidadoAnualEvaluacionDirector has been initialized
+ControllerConsolidadoEvaluacionDocente has been initialized
+ControllerDarBajaDocente has been initialized
+ControllerAsignarPares has been initialized
+ControllerConsolidadoAnualEvaluacionAdministrador has been initialized
+ControllerConsolidadoAnualEvaluacionAdministrador has been initialized
+ControllerEvaluarPares has been initialized
+ControllerConsolidadoEvaluacionDirector has been initialized
+ControllerEvaluadorDirectorAdministrador has been initialized
+ControllerAutoevaluacion has been initialized
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+ControllerEvaluarDocente has been initialized
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+04-Jun-2025 16:25:06.946 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+
+Inicio la Ejecución del Servlet Fachada del modulo General.null
+Finalizo la Ejecución del Servlet Fachada del modulo General.null
+
+04-Jun-2025 16:25:09.356 INFORMACIÓN [main] org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.getObjectInstance Name = cargadocente Ignoring unknown property: value of "jdbc:oracle:thin:@172.26.2.110:1521:prugespu"" for "description" property
+04-Jun-2025 16:25:09.388 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+Inicio la Ejecución del Servlet Fachada de vortalAplicativo del modulo Hermesoft 2.1  - Vortal.null
+Finalizo la Ejecución del Servlet Fachada de vortalAplicativo del modulo Hermesoft 2.1  - Vortal.null
+Inicio la Ejecución del Servlet Fachada del modulo Academico - Academusoft 3.2  null
+::::+> LOS DATOS DE UNIVERSIDADVO SE CARGARAN EN EL APPLICATION
+(INACTIVO)VERIFICAR PRUEBAS ICFES DE ASPIRANTES MEDIANTE WEB SERVICES DEL ICFES PIR
+04-Jun-2025 16:25:11.865 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+04-Jun-2025 16:25:13.320 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+Inicio la Ejecución del Servlet Fachada del modulo SNIES - Academusoft 3.2 null
+Finalizo la Ejecución del Servlet Fachada del modulo SNIES - Academusoft 3.2  null
+04-Jun-2025 16:25:13.330 INFORMACIÓN [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/app02/services/tomcat/publicas/academusoft/t8006/webapps/ROOT] de la aplicación web
+04-Jun-2025 16:25:13.341 INFORMACIÓN [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/app02/services/tomcat/publicas/academusoft/t8006/webapps/ROOT] has finished in [8] ms
+04-Jun-2025 16:25:13.344 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-127.0.0.1-8006"]
+04-Jun-2025 16:25:13.353 INFORMACIÓN [main] org.apache.catalina.startup.Catalina.start Server startup in [17007] milliseconds
+
+!!!   CREANDO SINGLETON AuthPolicy   !!! 
+
+
+
+
+------------------------------------------------------
+Ingresando al apl_gen de evaluacion docente ...
+REFERER QUE LLEGA (http://179.1.133.108/vortal/miVortal/s2/hms_ace_apl.jsp?itPorlet=0&itAplicacion=1)
+ORIGIN QUE LLEGA (http://179.1.133.108)
+IDUSUARIO QUE LLEGA (220006)
+ROL QUE LLEGA (145)
+------------------------------------------------------
+idUsuario :: 220006
+MI-USUARIO-VO cargado ...
+IDPERSONA: 62670
+ROL: 145
+BUSCANDO VALOR EN EL SET ... false
+**** iniciando carga de la estructura con la lista inicial !!!
+**** adicionando la estructura al cache !!!
+**** la lista es la inicial, la de funcionalidadPadre nulo !!!
+**** consultando en la BD la lista de hijas para: (69004) !!!
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/participante.properties ..... OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/instrumentoactor.properties ..... OK
+-----------------------------
+**** la lista es la inicial, la de funcionalidadPadre nulo !!!
+**** sacando la lista de hijas para: (69004): 2 !!!
+ABRIR FORMULARIO DOCENTE
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/escala.properties ..... OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/categoriainstrumento.properties ..... OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/fecha.properties ..... OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/instrumento.properties ..... OK
+TIPO: GENERAL
+FECHAS: [FechasVO{id=null, idActorEvaluacion=null, fechaInicio=2025-06-03 16:00:00.0, fechaFin=2025-06-30 21:00:00.0, tipo=General, estado=null, registradoPor=null, fechaCambio=null, configuracionesFechas=null, idUnidad=null, idPrograma=null, codigoMateria=null}]
+FORM CONTRASENA: true
+TIPO: GENERAL
+FECHAS: [FechasVO{id=null, idActorEvaluacion=null, fechaInicio=2025-06-03 16:00:00.0, fechaFin=2025-06-30 21:00:00.0, tipo=General, estado=null, registradoPor=null, fechaCambio=null, configuracionesFechas=null, idUnidad=null, idPrograma=null, codigoMateria=null}]
+FORM CONTRASENA: true
+TIPO: GENERAL
+FECHAS: [FechasVO{id=null, idActorEvaluacion=null, fechaInicio=2025-06-03 16:00:00.0, fechaFin=2025-06-30 21:00:00.0, tipo=General, estado=null, registradoPor=null, fechaCambio=null, configuracionesFechas=null, idUnidad=null, idPrograma=null, codigoMateria=null}]
+FORM CONTRASENA: false
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+MDTR: iniciando migracion de instrumentos por evaluacion.
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/instrumentoparticipante.properties ..... OK
+-----------------------------
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+MDTR: iniciando migracion de instrumentos por evaluacion.
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+MDTR: iniciando migracion de instrumentos por evaluacion.
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+MDTR: iniciando migracion de instrumentos por evaluacion.
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+MDTR: iniciando migracion de instrumentos por evaluacion.
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+MDTR: iniciando migracion de instrumentos por evaluacion.
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+
+
+
+------------------------------------------------------
+Ingresando al apl_gen de evaluacion docente ...
+REFERER QUE LLEGA (http://179.1.133.108/vortal/miVortal/s2/hms_ace_apl.jsp?itPorlet=0&itAplicacion=3)
+ORIGIN QUE LLEGA (http://179.1.133.108)
+IDUSUARIO QUE LLEGA (219703)
+ROL QUE LLEGA (152)
+------------------------------------------------------
+idUsuario :: 219703
+MI-USUARIO-VO cargado ...
+IDPERSONA: 60654
+ROL: 152
+BUSCANDO VALOR EN EL SET ... false
+**** iniciando carga de la estructura con la lista inicial !!!
+**** adicionando la estructura al cache !!!
+**** la lista es la inicial, la de funcionalidadPadre nulo !!!
+**** consultando en la BD la lista de hijas para: (69673) !!!
+**** consultando en la BD la lista de hijas para: (69004) !!!
+**** la lista es la inicial, la de funcionalidadPadre nulo !!!
+**** sacando la lista de hijas para: (69673): 4 !!!
+**** sacando la lista de hijas para: (69004): 1 !!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/actorevaluacion.properties ..... OK
+
+
+
+------------------------------------------------------
+Ingresando al apl_gen de evaluacion docente ...
+REFERER QUE LLEGA (http://179.1.133.108/vortal/miVortal/s2/hms_ace_apl.jsp?itPorlet=0&itAplicacion=1)
+ORIGIN QUE LLEGA (http://179.1.133.108)
+IDUSUARIO QUE LLEGA (220006)
+ROL QUE LLEGA (145)
+------------------------------------------------------
+idUsuario :: 220006
+MI-USUARIO-VO cargado ...
+IDPERSONA: 62670
+ROL: 145
+BUSCANDO VALOR EN EL SET ... false
+**** la lista es la inicial, la de funcionalidadPadre nulo !!!
+**** sacando la lista de hijas para: (69004): 2 !!!
+-----------------------------
+**** la lista es la inicial, la de funcionalidadPadre nulo !!!
+**** sacando la lista de hijas para: (69004): 2 !!!
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+MDTR: iniciando migracion de instrumentos por evaluacion.
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+ABRIR FORMULARIO DOCENTE
+FORM CONTRASENA: true
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/configuracioninstrumento.properties ..... OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/detalleconfiguracion.properties ..... OK
+
+
+
+------------------------------------------------------
+Ingresando al apl_gen de evaluacion docente ...
+REFERER QUE LLEGA (http://179.1.133.108/vortal/miVortal/s2/hms_ace_apl.jsp?itPorlet=0&itAplicacion=1)
+ORIGIN QUE LLEGA (http://179.1.133.108)
+IDUSUARIO QUE LLEGA (220006)
+ROL QUE LLEGA (145)
+------------------------------------------------------
+idUsuario :: 220006
+MI-USUARIO-VO cargado ...
+IDPERSONA: 62670
+ROL: 145
+BUSCANDO VALOR EN EL SET ... false
+**** la lista es la inicial, la de funcionalidadPadre nulo !!!
+**** sacando la lista de hijas para: (69004): 2 !!!
+-----------------------------
+**** la lista es la inicial, la de funcionalidadPadre nulo !!!
+**** sacando la lista de hijas para: (69004): 2 !!!
+ABRIR FORMULARIO DOCENTE
+FORM CONTRASENA: true
+^C[tomcat@development1 ~]$ t8006 restart
+Reiniciando Tomcat 9 UP-SOPORTE-PUBLICO TEST ACADEMUSOFT::: 8006
+Using CATALINA_BASE:   /app02/services/tomcat/publicas/academusoft/t8006
+Using CATALINA_HOME:   /app02/services/tomcat/publicas/academusoft/t8006
+Using CATALINA_TMPDIR: /app02/services/tomcat/publicas/academusoft/t8006/temp
+Using JRE_HOME:        /app02/services/tomcat/publicas/academusoft/t8006/bin/libs/jdk1.8.0_271
+Using CLASSPATH:       /app02/services/tomcat/publicas/academusoft/t8006/bin/bootstrap.jar:/app02/services/tomcat/publicas/academusoft/t8006/bin/tomcat-juli.jar
+Using CATALINA_OPTS:   
+Using CATALINA_BASE:   /app02/services/tomcat/publicas/academusoft/t8006
+Using CATALINA_HOME:   /app02/services/tomcat/publicas/academusoft/t8006
+Using CATALINA_TMPDIR: /app02/services/tomcat/publicas/academusoft/t8006/temp
+Using JRE_HOME:        /app02/services/tomcat/publicas/academusoft/t8006/bin/libs/jdk1.8.0_271
+Using CLASSPATH:       /app02/services/tomcat/publicas/academusoft/t8006/bin/bootstrap.jar:/app02/services/tomcat/publicas/academusoft/t8006/bin/tomcat-juli.jar
+Using CATALINA_OPTS:   
+Tomcat started.
+[tomcat@development1 ~]$ t8006 salida
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+04-Jun-2025 16:33:12.014 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+
+Inicio la Ejecución del Servlet Fachada del modulo General.null
+Finalizo la Ejecución del Servlet Fachada del modulo General.null
+
+04-Jun-2025 16:33:13.586 INFORMACIÓN [main] org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.getObjectInstance Name = avanza Ignoring unknown property: value of "jdbc:oracle:thin:@172.26.2.110:1521:PRUGESPU" for "description" property
+04-Jun-2025 16:33:13.621 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+Inicio la Ejecución del Servlet Fachada de vortalAplicativo del modulo Hermesoft 2.1  - Vortal.null
+Finalizo la Ejecución del Servlet Fachada de vortalAplicativo del modulo Hermesoft 2.1  - Vortal.null
+04-Jun-2025 16:33:15.742 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+Se construye la claseszs : ListenerVerificarPagosLiquidacionGestasoft 
+Iniciando listener de ListenerVerificarPagosLiquidacionGestasoft............../app02/services/tomcat/publicas/academusoft/t8006/webapps/formacionIG//fichero/log/verificarPagosGestasfotListener/
+
+API ::> application = formacionIG/educacionContinuada/generacionliquidacion
+API ::> Recuperando properties del JAR ::> /formacionIG/educacionContinuada/generacionliquidacion/properties/oracle/pverificacionpagogestasoft.properties ..... OK
+consultarParametros : -  NO SE PUDO TRAER DE LA BASE DE DATOS, EL OBJETO CON LOS VALOES DEL PARAMETRO. pVerificacionPagoGestasoftVO [null]
+faltanXMinutos ::::+> 27
+::::+> SE DEBERIA MANDAR A DORMIR EL LISTENER POR [27] MINUTOS.
+
+
+esHoraDeEjecutar ::::+> false
+
+
+::::+> ENTRÓ AL RUN().
+
+Colocando en  marcha el temporizadorAlerta(timerTask, Wed Jun 04 16:33:16 COT 2025, 1620000)........
+
+ListenerVerificarPagosLiquidacionGestasoft iniciado..............
+
+Inicio la Ejecución del Servlet Fachada de Reporte.
+Finalizo la Ejecución del Servlet Fachada de Reporte.
+Inicio la Ejecución del Servlet Fachada de vortalAplicativo del modulo Hermesoft 2.1  - Vortal.null
+consultarParametros : -  NO SE PUDO TRAER DE LA BASE DE DATOS, EL OBJETO CON LOS VALOES DEL PARAMETRO. pVerificacionPagoGestasoftVO [null]
+
+HORA DEL INSTANTE ::::+> 16:33
+-  HH : vecHHMM[0] : 16
+-  MM : vecHHMM[1] : 33
+
+numeroDePosicionesParaEjecutarHoras ::::+> 0
+numeroDePosicionesParaEjecutarHoras ::::+> 0
+faltanXMinutos ::::+> 27
+::::+> SE DEBERIA MANDAR A DORMIR EL LISTENER POR [27] MINUTOS.
+
+Finalizo la Ejecución del Servlet Fachada de vortalAplicativo del modulo Hermesoft 2.1  - Vortal.null
+timerTask : ESTE HILO-1749072796256 Matando el temporizador..............
+timerTask : inicial Durmiendo HILO-1749072796256- del proceso durante : 1620 segundos.
+
+Inicio la Ejecución del Servlet Fachada del modulo SNIES - Academusoft 3.2 null
+Finalizo la Ejecución del Servlet Fachada del modulo SNIES - Academusoft 3.2  null
+04-Jun-2025 16:33:16.447 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+++++++++++++++++++++++++++++++++++++++++++++++++
+ITM configurador en: 60
+LTM configurador en: true
+++++++++++++++++++++++++++++++++++++++++++++++++
+--------------------------------------------
+Inicializando el Timer de Migracion.
+Timer de Migracion Inicializado.
+--------------------------------------------
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+04-Jun-2025 16:33:16.517 GRAVE [main] org.apache.catalina.session.StandardManager.startInternal Excepción cargando sesiones desde almacenamiento persistente
+	java.lang.ClassCastException: java.io.ObjectStreamClass cannot be cast to java.lang.String
+		at java.io.ObjectInputStream.readTypeString(ObjectInputStream.java:1745)
+		at java.io.ObjectStreamClass.readNonProxy(ObjectStreamClass.java:803)
+		at java.io.ObjectInputStream.readClassDescriptor(ObjectInputStream.java:961)
+		at java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1973)
+		at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1848)
+		at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2158)
+		at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1665)
+		at java.io.ObjectInputStream.readObject(ObjectInputStream.java:501)
+		at java.io.ObjectInputStream.readObject(ObjectInputStream.java:459)
+		at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1587)
+		at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:1040)
+		at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:218)
+		at org.apache.catalina.session.StandardManager.load(StandardManager.java:162)
+		at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:354)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5194)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+ControllerPlantilla has been initialized
+<<<<<<<<<< SE SELECCIONÓ LA SIGUIENTE CARPETA PARA LAS PLANTILLAS  : unipamplona >>>>>>>>>>
+ControllerFuncionalidades has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerParticipante has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerEvaluacionDocente has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerPregunta has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerConfiguracion has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerPeriodo has been initialized
+
+API ::> application = evaluacion/docente
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/encuestadocente.properties ..... API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/periodo.properties ..... OK
+OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/evaluaciondocente.properties ..... 
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/evaluaciondocente.properties ..... OK
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerInstrumento has been initialized
+OK
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente//dist-lte-3.0.0-rc.1/img/
+ControllerFondo has been initialized
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/encuestaparticipante.properties ..... OK
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerConfiguracionInstrumento has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerEscala has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerCategoria has been initialized
+ControllerEvaluadorEstudiante has been initialized
+ControllerEliminarEvaluaciones has been initialized
+ControllerEvaluadorParesAutoevaluacion has been initialized
+MDTR: iniciando migracion de instrumentos por evaluacion.
+ControllerConsolidadoAnualEvaluacionDirector has been initialized
+ControllerConsolidadoEvaluacionDocente has been initialized
+ControllerDarBajaDocente has been initialized
+ControllerAsignarPares has been initialized
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/instrumentodocente.properties ..... OK
+ControllerConsolidadoAnualEvaluacionAdministrador has been initialized
+ControllerConsolidadoAnualEvaluacionAdministrador has been initialized
+ControllerEvaluarPares has been initialized
+ControllerConsolidadoEvaluacionDirector has been initialized
+ControllerEvaluadorDirectorAdministrador has been initialized
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+ControllerAutoevaluacion has been initialized
+ControllerEvaluarDocente has been initialized
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+04-Jun-2025 16:33:18.559 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+
+Inicio la Ejecución del Servlet Fachada del modulo General.null
+Finalizo la Ejecución del Servlet Fachada del modulo General.null
+
+04-Jun-2025 16:33:23.403 INFORMACIÓN [main] org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.getObjectInstance Name = cargadocente Ignoring unknown property: value of "jdbc:oracle:thin:@172.26.2.110:1521:prugespu"" for "description" property
+04-Jun-2025 16:33:23.439 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+Inicio la Ejecución del Servlet Fachada de vortalAplicativo del modulo Hermesoft 2.1  - Vortal.null
+Finalizo la Ejecución del Servlet Fachada de vortalAplicativo del modulo Hermesoft 2.1  - Vortal.null
+Inicio la Ejecución del Servlet Fachada del modulo Academico - Academusoft 3.2  null
+::::+> LOS DATOS DE UNIVERSIDADVO SE CARGARAN EN EL APPLICATION
+(INACTIVO)VERIFICAR PRUEBAS ICFES DE ASPIRANTES MEDIANTE WEB SERVICES DEL ICFES PIR
+04-Jun-2025 16:33:25.927 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+04-Jun-2025 16:33:27.417 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+Inicio la Ejecución del Servlet Fachada del modulo SNIES - Academusoft 3.2 null
+Finalizo la Ejecución del Servlet Fachada del modulo SNIES - Academusoft 3.2  null
+04-Jun-2025 16:33:27.432 INFORMACIÓN [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/app02/services/tomcat/publicas/academusoft/t8006/webapps/ROOT] de la aplicación web
+04-Jun-2025 16:33:27.442 INFORMACIÓN [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/app02/services/tomcat/publicas/academusoft/t8006/webapps/ROOT] has finished in [9] ms
+04-Jun-2025 16:33:27.447 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-127.0.0.1-8006"]
+04-Jun-2025 16:33:27.455 INFORMACIÓN [main] org.apache.catalina.startup.Catalina.start Server startup in [17784] milliseconds
+
+!!!   CREANDO SINGLETON AuthPolicy   !!! 
+
+
+
+
+------------------------------------------------------
+Ingresando al apl_gen de evaluacion docente ...
+REFERER QUE LLEGA (http://179.1.133.108/vortal/miVortal/s2/hms_ace_apl.jsp?itPorlet=0&itAplicacion=1)
+ORIGIN QUE LLEGA (http://179.1.133.108)
+IDUSUARIO QUE LLEGA (220006)
+ROL QUE LLEGA (145)
+------------------------------------------------------
+idUsuario :: 220006
+MI-USUARIO-VO cargado ...
+IDPERSONA: 62670
+ROL: 145
+BUSCANDO VALOR EN EL SET ... false
+**** iniciando carga de la estructura con la lista inicial !!!
+**** adicionando la estructura al cache !!!
+**** la lista es la inicial, la de funcionalidadPadre nulo !!!
+**** consultando en la BD la lista de hijas para: (69004) !!!
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/participante.properties ..... OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/instrumentoactor.properties ..... OK
+-----------------------------
+**** la lista es la inicial, la de funcionalidadPadre nulo !!!
+**** sacando la lista de hijas para: (69004): 2 !!!
+ABRIR FORMULARIO DOCENTE
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/escala.properties ..... OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/categoriainstrumento.properties ..... OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/fecha.properties ..... OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/instrumento.properties ..... OK
+FORM CONTRASENA: false
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+MDTR: iniciando migracion de instrumentos por evaluacion.
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+
+
+
+------------------------------------------------------
+Ingresando al apl_gen de evaluacion docente ...
+REFERER QUE LLEGA (http://179.1.133.108/vortal/miVortal/s2/hms_ace_apl.jsp?itPorlet=0&itAplicacion=3)
+ORIGIN QUE LLEGA (http://179.1.133.108)
+IDUSUARIO QUE LLEGA (219703)
+ROL QUE LLEGA (152)
+------------------------------------------------------
+idUsuario :: 219703
+MI-USUARIO-VO cargado ...
+IDPERSONA: 60654
+ROL: 152
+BUSCANDO VALOR EN EL SET ... false
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+MDTR: iniciando migracion de instrumentos por evaluacion.
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+**** iniciando carga de la estructura con la lista inicial !!!
+**** adicionando la estructura al cache !!!
+**** la lista es la inicial, la de funcionalidadPadre nulo !!!
+**** consultando en la BD la lista de hijas para: (69673) !!!
+**** consultando en la BD la lista de hijas para: (69004) !!!
+**** la lista es la inicial, la de funcionalidadPadre nulo !!!
+**** sacando la lista de hijas para: (69673): 4 !!!
+**** sacando la lista de hijas para: (69004): 1 !!!
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/actorevaluacion.properties ..... OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/configuracioninstrumento.properties ..... OK
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+MDTR: iniciando migracion de instrumentos por evaluacion.
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+MDTR: iniciando migracion de instrumentos por evaluacion.
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+MDTR: iniciando migracion de instrumentos por evaluacion.
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+**** la lista es la inicial, la de funcionalidadPadre nulo !!!
+**** sacando la lista de hijas para: (69673): 4 !!!
+**** sacando la lista de hijas para: (69004): 1 !!!
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+MDTR: iniciando migracion de instrumentos por evaluacion.
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+MDTR: iniciando migracion de instrumentos por evaluacion.
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+^C[tomcat@development1 ~]$ t8006 restart
+Reiniciando Tomcat 9 UP-SOPORTE-PUBLICO TEST ACADEMUSOFT::: 8006
+Using CATALINA_BASE:   /app02/services/tomcat/publicas/academusoft/t8006
+Using CATALINA_HOME:   /app02/services/tomcat/publicas/academusoft/t8006
+Using CATALINA_TMPDIR: /app02/services/tomcat/publicas/academusoft/t8006/temp
+Using JRE_HOME:        /app02/services/tomcat/publicas/academusoft/t8006/bin/libs/jdk1.8.0_271
+Using CLASSPATH:       /app02/services/tomcat/publicas/academusoft/t8006/bin/bootstrap.jar:/app02/services/tomcat/publicas/academusoft/t8006/bin/tomcat-juli.jar
+Using CATALINA_OPTS:   
+Using CATALINA_BASE:   /app02/services/tomcat/publicas/academusoft/t8006
+Using CATALINA_HOME:   /app02/services/tomcat/publicas/academusoft/t8006
+Using CATALINA_TMPDIR: /app02/services/tomcat/publicas/academusoft/t8006/temp
+Using JRE_HOME:        /app02/services/tomcat/publicas/academusoft/t8006/bin/libs/jdk1.8.0_271
+Using CLASSPATH:       /app02/services/tomcat/publicas/academusoft/t8006/bin/bootstrap.jar:/app02/services/tomcat/publicas/academusoft/t8006/bin/tomcat-juli.jar
+Using CATALINA_OPTS:   
+Tomcat started.
+[tomcat@development1 ~]$ t8006 salida
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+04-Jun-2025 16:41:08.921 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+
+Inicio la Ejecución del Servlet Fachada del modulo General.null
+Finalizo la Ejecución del Servlet Fachada del modulo General.null
+
+04-Jun-2025 16:41:10.595 INFORMACIÓN [main] org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.getObjectInstance Name = avanza Ignoring unknown property: value of "jdbc:oracle:thin:@172.26.2.110:1521:PRUGESPU" for "description" property
+04-Jun-2025 16:41:10.631 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+Inicio la Ejecución del Servlet Fachada de vortalAplicativo del modulo Hermesoft 2.1  - Vortal.null
+Finalizo la Ejecución del Servlet Fachada de vortalAplicativo del modulo Hermesoft 2.1  - Vortal.null
+
+
+
+
+
+
+
+
+
+04-Jun-2025 16:41:13.047 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+Se construye la claseszs : ListenerVerificarPagosLiquidacionGestasoft 
+Iniciando listener de ListenerVerificarPagosLiquidacionGestasoft............../app02/services/tomcat/publicas/academusoft/t8006/webapps/formacionIG//fichero/log/verificarPagosGestasfotListener/
+
+
+API ::> application = formacionIG/educacionContinuada/generacionliquidacion
+API ::> Recuperando properties del JAR ::> /formacionIG/educacionContinuada/generacionliquidacion/properties/oracle/pverificacionpagogestasoft.properties ..... OK
+consultarParametros : -  NO SE PUDO TRAER DE LA BASE DE DATOS, EL OBJETO CON LOS VALOES DEL PARAMETRO. pVerificacionPagoGestasoftVO [null]
+faltanXMinutos ::::+> 19
+::::+> SE DEBERIA MANDAR A DORMIR EL LISTENER POR [19] MINUTOS.
+
+
+esHoraDeEjecutar ::::+> false
+
+
+::::+> ENTRÓ AL RUN().
+
+Colocando en  marcha el temporizadorAlerta(timerTask, Wed Jun 04 16:41:13 COT 2025, 1140000)........
+
+ListenerVerificarPagosLiquidacionGestasoft iniciado..............
+
+Inicio la Ejecución del Servlet Fachada de Reporte.
+Finalizo la Ejecución del Servlet Fachada de Reporte.
+Inicio la Ejecución del Servlet Fachada de vortalAplicativo del modulo Hermesoft 2.1  - Vortal.null
+Finalizo la Ejecución del Servlet Fachada de vortalAplicativo del modulo Hermesoft 2.1  - Vortal.null
+consultarParametros : -  NO SE PUDO TRAER DE LA BASE DE DATOS, EL OBJETO CON LOS VALOES DEL PARAMETRO. pVerificacionPagoGestasoftVO [null]
+Inicio la Ejecución del Servlet Fachada del modulo SNIES - Academusoft 3.2 null
+
+HORA DEL INSTANTE ::::+> 16:41
+-  HH : vecHHMM[0] : 16
+-  MM : vecHHMM[1] : 41
+
+numeroDePosicionesParaEjecutarHoras ::::+> 0
+numeroDePosicionesParaEjecutarHoras ::::+> 0
+faltanXMinutos ::::+> 19
+::::+> SE DEBERIA MANDAR A DORMIR EL LISTENER POR [19] MINUTOS.
+
+timerTask : ESTE HILO-1749073273720 Matando el temporizador..............
+timerTask : inicial Durmiendo HILO-1749073273720- del proceso durante : 1140 segundos.
+
+Finalizo la Ejecución del Servlet Fachada del modulo SNIES - Academusoft 3.2  null
+
+
+
+
+
+
+
+
+
+04-Jun-2025 16:41:14.008 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+++++++++++++++++++++++++++++++++++++++++++++++++
+ITM configurador en: 60
+LTM configurador en: true
+++++++++++++++++++++++++++++++++++++++++++++++++
+--------------------------------------------
+Inicializando el Timer de Migracion.
+Timer de Migracion Inicializado.
+--------------------------------------------
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+
+
+04-Jun-2025 16:41:14.070 GRAVE [main] org.apache.catalina.session.StandardManager.startInternal Excepción cargando sesiones desde almacenamiento persistente
+	java.lang.ClassCastException: java.io.ObjectStreamClass cannot be cast to java.lang.String
+		at java.io.ObjectInputStream.readTypeString(ObjectInputStream.java:1745)
+		at java.io.ObjectStreamClass.readNonProxy(ObjectStreamClass.java:803)
+		at java.io.ObjectInputStream.readClassDescriptor(ObjectInputStream.java:961)
+		at java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1973)
+		at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1848)
+		at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2158)
+		at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1665)
+		at java.io.ObjectInputStream.readObject(ObjectInputStream.java:501)
+		at java.io.ObjectInputStream.readObject(ObjectInputStream.java:459)
+		at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1587)
+		at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:1040)
+		at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:218)
+		at org.apache.catalina.session.StandardManager.load(StandardManager.java:162)
+		at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:354)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5194)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+ControllerPlantilla has been initialized
+<<<<<<<<<< SE SELECCIONÓ LA SIGUIENTE CARPETA PARA LAS PLANTILLAS  : unipamplona >>>>>>>>>>
+ControllerFuncionalidades has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerParticipante has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerEvaluacionDocente has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerPregunta has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerConfiguracion has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerPeriodo has been initialized
+
+
+
+
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/periodo.properties ..... OK
+
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerInstrumento has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente//dist-lte-3.0.0-rc.1/img/
+ControllerFondo has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerConfiguracionInstrumento has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerEscala has been initialized
+PATH PROCESARDATOS_LOG_: /app02/services/tomcat/publicas/academusoft/t8006/webapps/evaluacionDocente/files/
+ControllerCategoria has been initialized
+ControllerEvaluadorEstudiante has been initialized
+ControllerEliminarEvaluaciones has been initialized
+ControllerEvaluadorParesAutoevaluacion has been initialized
+ControllerConsolidadoAnualEvaluacionDirector has been initialized
+ControllerConsolidadoEvaluacionDocente has been initialized
+ControllerDarBajaDocente has been initialized
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/encuestadocente.properties ..... ControllerAsignarPares has been initialized
+ControllerConsolidadoAnualEvaluacionAdministrador has been initialized
+ControllerConsolidadoAnualEvaluacionAdministrador has been initialized
+ControllerEvaluarPares has been initialized
+ControllerConsolidadoEvaluacionDirector has been initialized
+ControllerEvaluadorDirectorAdministrador has been initialized
+ControllerAutoevaluacion has been initialized
+ControllerEvaluarDocente has been initialized
+
+OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/evaluaciondocente.properties ..... 
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/evaluaciondocente.properties ..... OK
+OK
+
+MDTR: iniciando migracion de instrumentos por evaluacion.
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/instrumentodocente.properties ..... OK
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/encuestaparticipante.properties ..... OK
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+04-Jun-2025 16:41:16.001 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+
+Inicio la Ejecución del Servlet Fachada del modulo General.null
+Finalizo la Ejecución del Servlet Fachada del modulo General.null
+
+04-Jun-2025 16:41:19.702 INFORMACIÓN [main] org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.getObjectInstance Name = cargadocente Ignoring unknown property: value of "jdbc:oracle:thin:@172.26.2.110:1521:prugespu"" for "description" property
+04-Jun-2025 16:41:19.737 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+Inicio la Ejecución del Servlet Fachada de vortalAplicativo del modulo Hermesoft 2.1  - Vortal.null
+Finalizo la Ejecución del Servlet Fachada de vortalAplicativo del modulo Hermesoft 2.1  - Vortal.null
+Inicio la Ejecución del Servlet Fachada del modulo Academico - Academusoft 3.2  null
+::::+> LOS DATOS DE UNIVERSIDADVO SE CARGARAN EN EL APPLICATION
+(INACTIVO)VERIFICAR PRUEBAS ICFES DE ASPIRANTES MEDIANTE WEB SERVICES DEL ICFES PIR
+04-Jun-2025 16:41:22.539 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+04-Jun-2025 16:41:24.032 INFORMACIÓN [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+Inicio la Ejecución del Servlet Fachada del modulo SNIES - Academusoft 3.2 null
+Finalizo la Ejecución del Servlet Fachada del modulo SNIES - Academusoft 3.2  null
+04-Jun-2025 16:41:24.042 INFORMACIÓN [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [/app02/services/tomcat/publicas/academusoft/t8006/webapps/ROOT] de la aplicación web
+04-Jun-2025 16:41:24.051 INFORMACIÓN [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/app02/services/tomcat/publicas/academusoft/t8006/webapps/ROOT] has finished in [8] ms
+04-Jun-2025 16:41:24.054 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-127.0.0.1-8006"]
+04-Jun-2025 16:41:24.133 INFORMACIÓN [main] org.apache.catalina.startup.Catalina.start Server startup in [17515] milliseconds
+
+!!!   CREANDO SINGLETON AuthPolicy   !!! 
+
+
+
+
+------------------------------------------------------
+Ingresando al apl_gen de evaluacion docente ...
+REFERER QUE LLEGA (http://179.1.133.108/vortal/miVortal/s2/hms_ace_apl.jsp?itPorlet=0&itAplicacion=1)
+ORIGIN QUE LLEGA (http://179.1.133.108)
+IDUSUARIO QUE LLEGA (220006)
+ROL QUE LLEGA (145)
+------------------------------------------------------
+idUsuario :: 220006
+MI-USUARIO-VO cargado ...
+IDPERSONA: 62670
+ROL: 145
+BUSCANDO VALOR EN EL SET ... false
+**** iniciando carga de la estructura con la lista inicial !!!
+**** adicionando la estructura al cache !!!
+**** la lista es la inicial, la de funcionalidadPadre nulo !!!
+**** consultando en la BD la lista de hijas para: (69004) !!!
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/participante.properties ..... OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/instrumentoactor.properties ..... OK
+-----------------------------
+**** la lista es la inicial, la de funcionalidadPadre nulo !!!
+**** sacando la lista de hijas para: (69004): 2 !!!
+ABRIR FORMULARIO DOCENTE
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/escala.properties ..... OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/categoriainstrumento.properties ..... OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/fecha.properties ..... OK
+
+API ::> application = evaluacion/docente
+API ::> Recuperando properties del JAR ::> /evaluacion/docente/properties/oracle/instrumento.properties ..... OK
+TIPO: UNIDAD
+FECHAS: [FechasVO{id=null, idActorEvaluacion=null, fechaInicio=2025-06-02 17:00:00.0, fechaFin=2025-06-30 16:39:00.0, tipo=Unidad, estado=null, registradoPor=null, fechaCambio=null, configuracionesFechas=null, idUnidad=null, idPrograma=null, codigoMateria=null}]
+FORM CONTRASENA: false
+ABRIR FORMULARIO DOCENTE
+TIPO: UNIDAD
+FECHAS: [FechasVO{id=null, idActorEvaluacion=null, fechaInicio=2025-06-02 17:00:00.0, fechaFin=2025-06-30 16:39:00.0, tipo=Unidad, estado=null, registradoPor=null, fechaCambio=null, configuracionesFechas=null, idUnidad=null, idPrograma=null, codigoMateria=null}]
+FORM CONTRASENA: false
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+MDTR: iniciando migracion de instrumentos por evaluacion.
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+MDTR: iniciando migracion de instrumentos por evaluacion.
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+MDTR: iniciando migracion de instrumentos por evaluacion.
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------
+--------------------------------------------
+INICIO: EJECUCION DE MIGRACION DE INSTRUMENTOS
+MDTR: iniciando migracion de instrumentos por evaluacion.
+MDTR: iniciando migracion de instrumentos de Director o Jefe Inmediato [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de pares/colegas o colaboradores [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de autoevaluacion [IDEvaluacion: 101]
+MDTR: iniciando migracion de instrumentos de estudiantes [IDEvaluacion: 101]
+FIN: EJECUCION DE MIGRACION DE INSTRUMENTOS
+--------------------------------------------

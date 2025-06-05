@@ -1,8 +1,8 @@
 import { Component } from '@angular/core'
 import { StatsWidgetComponent } from './components/statswidget'
-import { BasicCardWidgetComponent } from './components/basiccardwidget.component'
 import { RevenueStreamWidgetComponent } from './components/revenuestreamwidget'
 import { NotificationsWidgetComponent } from './components/notificationswidget'
+import { BasicCardWidgetComponent } from './components/basic-card-widget/basic-card-widget.component'
 
 @Component({
   selector: 'app-dashboard',

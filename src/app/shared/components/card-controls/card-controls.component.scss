@@ -1,0 +1,16 @@
+
+:host ::ng-deep {
+    .p-button-sm {
+      width: 2rem;
+      height: 2rem;
+      .p-button-icon {
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+.minimized {
+    .hidden {
+      display: none;
+    }
+  }

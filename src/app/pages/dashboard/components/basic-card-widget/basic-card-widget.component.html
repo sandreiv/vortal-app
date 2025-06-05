@@ -1,0 +1,23 @@
+<div
+  class="card"
+  [class.minimized]="isMinimized"
+  [class.fullscreen]="isFullscreen">
+  <div class="flex justify-between items-center mb-6">
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2">
+        <div class="font-semibold text-xl">Basic Card Widget</div>
+        <div class="text-muted-color italic">Preview</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <app-card-controls (minimize)="onMinimize()" (maximize)="onMaximize()">
+      </app-card-controls>
+      <app-menu-item (fullscreen)="onFullscreen()"> </app-menu-item>
+    </div>
+  </div>
+  <div class="card-content" [class.collapsed]="isMinimized">
+    <div class="p-4">
+      <p>Contenido de la tarjeta</p>
+    </div>
+  </div>
+</div>

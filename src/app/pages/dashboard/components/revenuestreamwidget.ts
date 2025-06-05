@@ -1,12 +1,20 @@
 import { Component } from '@angular/core'
-
+import { CardControlsComponent } from '../../../shared/components/card-controls/card-controls.component'
+import { MenuItemComponent } from '../../../shared/components/menu-item/menu-item.component'
 @Component({
   standalone: true,
   selector: 'app-revenue-stream-widget',
-  imports: [],
-  template: `<div class="card mb-4">
-    <h5>Revenue Stream</h5>
-    <div class="flex flex-column gap-3">
+  imports: [CardControlsComponent, MenuItemComponent],
+  template: `<div class="card mb-4" [class.minimized]="isMinimized" [class.fullscreen]="isFullscreen">
+    <div class="flex justify-between items-center mb-6">
+      <h5>Revenue Stream</h5>
+      <div class="flex items-center gap-2">
+        <app-card-controls (minimize)="onMinimize()" (maximize)="onMaximize()">
+        </app-card-controls>
+        <app-menu-item (fullscreen)="onFullscreen()"> </app-menu-item>
+      </div>
+    </div>
+    <div class="flex flex-column gap-3" [class.hidden]="isMinimized">
       <div class="flex align-items-center gap-3">
         <div
           class="flex align-items-center justify-content-center bg-orange-100 border-round"
@@ -23,4 +31,21 @@ import { Component } from '@angular/core'
   </div>`,
   styleUrls: ['../../../../assets/pages/dashboard/_dashboard.scss'],
 })
-export class RevenueStreamWidgetComponent {}
+export class RevenueStreamWidgetComponent {
+  menu = null
+  isMinimized = false
+  isFullscreen = false
+
+  onMinimize() {
+    this.isMinimized = true
+  }
+
+  onMaximize() {
+    this.isMinimized = false
+  }
+
+  onFullscreen() {
+    this.isFullscreen = !this.isFullscreen
+  }
+  
+}

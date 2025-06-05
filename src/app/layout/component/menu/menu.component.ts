@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core'
 import { RouterModule } from '@angular/router'
 import { MenuItem } from 'primeng/api'
-import { AppMenuitemComponent } from '../menuitem/menuitem.component'
 import { CommonModule } from '@angular/common'
-
+import { AppMenuContentComponent } from '../menu-content/menu-content.component'
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [CommonModule, AppMenuitemComponent, RouterModule],
+  imports: [CommonModule, RouterModule, AppMenuContentComponent],
   templateUrl: './menu.component.html',
 })
 export class AppMenuComponent implements OnInit {
@@ -83,7 +82,7 @@ export class AppMenuComponent implements OnInit {
             routerLink: ['/'],
           },
         ],
-      }
+      },
     ]
   }
 }
