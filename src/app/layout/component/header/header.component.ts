@@ -1,4 +1,4 @@
-import { Component, output } from '@angular/core'
+import { Component, output, ViewChild } from '@angular/core'
 import { MenuItem } from 'primeng/api'
 import { RouterModule } from '@angular/router'
 import { CommonModule } from '@angular/common'
@@ -22,6 +22,8 @@ import { ButtonModule } from 'primeng/button'
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
+  
+  @ViewChild('profileMenu') profileMenu!: Menu
   readonly fullscreen = output<void>()
   menu: Menu | null = null
   isFullscreen = false
@@ -93,5 +95,9 @@ export class HeaderComponent {
         doc.msExitFullscreen()
       }
     }
+  }
+
+  showProfileMenu(event: Event) {
+    this.profileMenu.toggle(event);
   }
 }

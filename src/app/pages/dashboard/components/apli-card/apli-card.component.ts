@@ -3,7 +3,7 @@ import { Component, input } from '@angular/core'
 @Component({
   selector: 'app-apli-card',
   imports: [],
-  templateUrl: './apli-card.html',
+  templateUrl: './apli-card.component.html',
   styleUrls: ['../../../../../assets/pages/dashboard/_dashboard.scss'],
 })
 export class ApliCardComponent {

@@ -2,18 +2,26 @@
   <app-stats-widget class="contents"></app-stats-widget>
   <div class="col-span-12 xl:col-span-6">
     <app-basic-card-widget></app-basic-card-widget>
-    <div class="flex flex-wrap gap-4 mt-4">
+  </div>
+  <div class="col-span-12 xl:col-span-6">
+    <div class="grid grid-cols-12 gap-8">
       @for (app of applications; track app.title) {
-        <app-apli-card 
-          [title]="app.title"
-          [image]="app.image"
-          [description]="app.description">
-        </app-apli-card>
+        <div class="col-span-12 lg:col-span-4 xl:col-span-4">
+          <app-apli-card 
+            [title]="app.title"
+            [image]="app.image"
+            [description]="app.description">
+          </app-apli-card>
+        </div>
       }
     </div>
   </div>
-  <div class="col-span-12 xl:col-span-6">
+</div>
+<div class="grid grid-cols-12 gap-8 mt-4">
+  <div class="col-span-12 xl:col-span-3">
+    <app-news-card></app-news-card>
+  </div>
+  <div class="col-span-12 xl:col-span-3">
     <app-revenue-stream-widget></app-revenue-stream-widget>
-    <br />
   </div>
 </div>

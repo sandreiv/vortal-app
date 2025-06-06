@@ -2,8 +2,8 @@ import { Component } from '@angular/core'
 import { StatsWidgetComponent } from './components/statswidget'
 import { RevenueStreamWidgetComponent } from './components/revenuestreamwidget'
 import { BasicCardWidgetComponent } from './components/basic-card-widget/basic-card-widget.component'
-import { ApliCardComponent } from './components/apli-card/apli-card'
-
+import { ApliCardComponent } from './components/apli-card/apli-card.component'
+import { NewsCardComponent } from './components/news-card/news-card.component'
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -12,6 +12,7 @@ import { ApliCardComponent } from './components/apli-card/apli-card'
     BasicCardWidgetComponent,
     RevenueStreamWidgetComponent,
     ApliCardComponent,
+    NewsCardComponent,
   ],
   templateUrl: './dashboard.component.html',
 })
@@ -31,16 +32,6 @@ export class DashboardComponent {
       title: 'Otra Aplicación',
       image: 'assets/pages/img/centro-de-juegos.png',
       description: 'Descripción de otra aplicación'
-    },
-    {
-      title: 'Nueva Aplicación',
-      image: 'assets/pages/img/youtube.png',
-      description: 'Descripción de la nueva aplicación'
-    },
-    {
-      title: 'Nueva Aplicación 3',
-      image: 'assets/pages/img/youtube.png',
-      description: 'Descripción de la nueva aplicación'
     }
   ];
 }

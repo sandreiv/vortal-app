@@ -7,7 +7,7 @@
     </button>
   </div>
 
-  <div class="layout-topbar-actions">
+  <div class="layout-topbar-actions flex items-center">
     <div class="layout-config-menu">
       <button
         type="button"
@@ -56,17 +56,23 @@
           <i class="pi pi-inbox"></i>
           <span>Messages</span>
         </button>
+      </div>
+    </div>
+    <div class="border-l border-gray-300 h-5"></div>
+    <div class="layout-topbar-menu hidden lg:block">
+      <div class="layout-topbar-menu-content">
         <button
           type="button"
           class="layout-topbar-action"
-          (click)="profileMenu.toggle($event)">
+          (mouseenter)="showProfileMenu($event)">
           <img
-            class="w-11 h-11 rounded-full object-cover"
-            src="assets/layout/img/perfil3.jpg"
+            class="w-11 h-11 rounded-full object-contain"
+            src="assets/layout/img/hombre.png"
             alt="Profile" />
           <span>Profile</span>
         </button>
-        <p-menu #profileMenu [popup]="true" [model]="profileMenuItems"></p-menu>
+        <span class="text-md text-gray-500 justify-center content-center">Juan Perez</span>
+        <p-menu #profileMenu [popup]="true" [model]="profileMenuItems" (mouseleave)="profileMenu.hide()"></p-menu>
       </div>
     </div>
   </div>
