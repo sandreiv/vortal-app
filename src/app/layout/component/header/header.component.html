@@ -1,10 +1,21 @@
-<div class="layout-topbar">
-  <div class="layout-topbar-logo-container">
+<div class="layout-topbar" [ngClass]="{ 'shadow-md': isScrolled }">
+  <div class="layout-topbar-logo-container flex items-center">
     <button
       class="layout-menu-button layout-topbar-action"
       (click)="layoutService.onMenuToggle()">
       <i class="pi pi-bars"></i>
     </button>
+    <div class="search-container ml-4">
+      <div class="flex items-center">
+        <input
+          type="text"
+          pInputText
+          class="w-64 pl-60"
+          placeholder="Buscar..."
+          [(ngModel)]="searchText"
+          (input)="onSearch()" />
+      </div>
+    </div>
   </div>
 
   <div class="layout-topbar-actions flex items-center">
@@ -71,8 +82,14 @@
             alt="Profile" />
           <span>Profile</span>
         </button>
-        <span class="text-md text-gray-500 justify-center content-center">Juan Perez</span>
-        <p-menu #profileMenu [popup]="true" [model]="profileMenuItems" (mouseleave)="profileMenu.hide()"></p-menu>
+        <span class="text-md text-gray-500 justify-center content-center"
+          >Juan Perez</span
+        >
+        <p-menu
+          #profileMenu
+          [popup]="true"
+          [model]="profileMenuItems"
+          (mouseleave)="profileMenu.hide()"></p-menu>
       </div>
     </div>
   </div>

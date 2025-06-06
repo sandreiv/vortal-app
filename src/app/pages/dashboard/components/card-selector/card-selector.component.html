@@ -1,0 +1,16 @@
+<div class="card-selector p-3">
+  <h3 class="text-lg font-semibold mb-3">Tarjetas Disponibles</h3>
+  <div class="flex flex-col gap-2">
+    @for (card of cardOptions; track card.id) {
+      <div class="flex items-center">
+        <p-checkbox
+          [binary]="true"
+          [(ngModel)]="card.checked"
+          (onChange)="onCardToggle()"
+          [inputId]="card.id">
+        </p-checkbox>
+        <label [for]="card.id" class="ml-2">{{ card.label }}</label>
+      </div>
+    }
+  </div>
+</div>

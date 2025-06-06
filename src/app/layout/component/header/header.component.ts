@@ -1,4 +1,4 @@
-import { Component, output, ViewChild } from '@angular/core'
+import { Component, output, ViewChild, HostListener } from '@angular/core'
 import { MenuItem } from 'primeng/api'
 import { RouterModule } from '@angular/router'
 import { CommonModule } from '@angular/common'
@@ -7,6 +7,8 @@ import { LayoutService } from '../../service/layout.service'
 import { ConfiguratorComponent } from '../configurator/configurator.component'
 import { Menu, MenuModule } from 'primeng/menu'
 import { ButtonModule } from 'primeng/button'
+import { InputTextModule } from 'primeng/inputtext'
+import { FormsModule } from '@angular/forms'
 
 @Component({
   selector: 'app-header',
@@ -18,15 +20,28 @@ import { ButtonModule } from 'primeng/button'
     ConfiguratorComponent,
     MenuModule,
     ButtonModule,
+    InputTextModule,
+    FormsModule,
   ],
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
-  
   @ViewChild('profileMenu') profileMenu!: Menu
   readonly fullscreen = output<void>()
   menu: Menu | null = null
   isFullscreen = false
+  isScrolled = false
+  searchText = ''
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 0
+  }
+
+  onSearch() {
+    // Aquí puedes implementar la lógica de búsqueda
+    console.log('Buscando:', this.searchText)
+  }
 
   items!: MenuItem[]
   profileMenuItems: MenuItem[] = [
@@ -98,6 +113,6 @@ export class HeaderComponent {
   }
 
   showProfileMenu(event: Event) {
-    this.profileMenu.toggle(event);
+    this.profileMenu.toggle(event)
   }
 }

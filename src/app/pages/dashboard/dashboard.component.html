@@ -1,27 +1,45 @@
 <div class="grid grid-cols-12 gap-8 mt-4">
-  <app-stats-widget class="contents"></app-stats-widget>
-  <div class="col-span-12 xl:col-span-6">
-    <app-basic-card-widget></app-basic-card-widget>
+  <div class="col-span-12 xl:col-span-3">
+    <app-card-selector
+      (cardsChanged)="onCardsChanged($event)"></app-card-selector>
   </div>
-  <div class="col-span-12 xl:col-span-6">
+  <div class="col-span-12 xl:col-span-9">
     <div class="grid grid-cols-12 gap-8">
-      @for (app of applications; track app.title) {
-        <div class="col-span-12 lg:col-span-4 xl:col-span-4">
-          <app-apli-card 
-            [title]="app.title"
-            [image]="app.image"
-            [description]="app.description">
-          </app-apli-card>
+      @if (visibleCards['stats']) {
+        <app-stats-widget class="contents"></app-stats-widget>
+      }
+      @if (visibleCards['basic-card']) {
+        <div class="col-span-12 xl:col-span-6">
+          <app-basic-card-widget></app-basic-card-widget>
+        </div>
+      }
+      @if (visibleCards['apli-cards']) {
+        <div class="col-span-12 xl:col-span-6">
+          <div class="grid grid-cols-12 gap-8">
+            @for (app of applications; track app.title) {
+              <div class="col-span-12 lg:col-span-4 xl:col-span-4">
+                <app-apli-card
+                  [title]="app.title"
+                  [image]="app.image"
+                  [description]="app.description">
+                </app-apli-card>
+              </div>
+            }
+          </div>
         </div>
       }
     </div>
-  </div>
-</div>
-<div class="grid grid-cols-12 gap-8 mt-4">
-  <div class="col-span-12 xl:col-span-3">
-    <app-news-card></app-news-card>
-  </div>
-  <div class="col-span-12 xl:col-span-3">
-    <app-revenue-stream-widget></app-revenue-stream-widget>
+    <div class="grid grid-cols-12 gap-8 mt-4">
+      @if (visibleCards['news']) {
+        <div class="col-span-12 xl:col-span-3">
+          <app-news-card></app-news-card>
+        </div>
+      }
+      @if (visibleCards['revenue']) {
+        <div class="col-span-12 xl:col-span-3">
+          <app-revenue-stream-widget></app-revenue-stream-widget>
+        </div>
+      }
+    </div>
   </div>
 </div>

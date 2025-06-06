@@ -7,10 +7,9 @@ import { Component, input } from '@angular/core'
   styleUrls: ['../../../../../assets/pages/dashboard/_dashboard.scss'],
 })
 export class ApliCardComponent {
-  // Componente hijo, los datos se pasan desde el componente padre. 
+  // Componente hijo, los datos se pasan desde el componente padre.
   // Se usa input para recibir los datos desde el componente padre.
-  title = input('');
-  image = input('');
-  description = input('');
-
+  title = input('')
+  image = input('')
+  description = input('')
 }
