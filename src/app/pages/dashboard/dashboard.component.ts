@@ -1,30 +1,34 @@
-import { Component } from '@angular/core'
+import { Component, OnInit, OnDestroy, signal } from '@angular/core'
+import { CommonModule } from '@angular/common'
 import { StatsWidgetComponent } from './components/statswidget'
-import { RevenueStreamWidgetComponent } from './components/revenuestreamwidget'
 import { BasicCardWidgetComponent } from './components/basic-card-widget/basic-card-widget.component'
 import { ApliCardComponent } from './components/apli-card/apli-card.component'
 import { NewsCardComponent } from './components/news-card/news-card.component'
-import { CardSelectorComponent } from './components/card-selector/card-selector.component'
+import { DynamicCardComponent } from './components/dynamic-card/dynamic-card'
+import { DashboardService } from '../../services/dashboard.service'
+import { Subscription } from 'rxjs'
+import { computed } from '@angular/core'
 
-interface CardVisibility {
-  id: string
-  visible: boolean
+interface Item {
+  category: 'news' | 'blog' | 'tutorial'
+  title: string
+  content: string
 }
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   imports: [
+    CommonModule,
     StatsWidgetComponent,
     BasicCardWidgetComponent,
-    RevenueStreamWidgetComponent,
     ApliCardComponent,
     NewsCardComponent,
-    CardSelectorComponent,
+    DynamicCardComponent,
   ],
   templateUrl: './dashboard.component.html',
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit, OnDestroy {
   applications = [
     {
       title: 'Evaluación Docente',
@@ -46,14 +50,62 @@ export class DashboardComponent {
   visibleCards: Record<string, boolean> = {
     stats: true,
     'basic-card': true,
-    revenue: true,
+    'contact-info': true,
     news: true,
     'apli-cards': true,
   }
 
-  onCardsChanged(cards: CardVisibility[]) {
-    cards.forEach((card) => {
-      this.visibleCards[card.id] = card.visible
-    })
+  private subscription: Subscription
+
+  constructor(private dashboardService: DashboardService) {
+    this.subscription = new Subscription()
   }
+
+  ngOnInit() {
+    this.subscription.add(
+      this.dashboardService.cardsVisibility$.subscribe((cards) => {
+        cards.forEach((card) => {
+          this.visibleCards[card.id] = card.visible
+        })
+      })
+    )
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe()
+  }
+
+  private items = signal<Item[]>([
+    {
+      category: 'news',
+      title: 'Noticia A',
+      content: 'Contenido de la noticia A.',
+    },
+    { category: 'blog', title: 'Blog B', content: 'Contenido del blog B.' },
+    {
+      category: 'tutorial',
+      title: 'Tutorial C',
+      content: 'Contenido del tutorial C.',
+    },
+    {
+      category: 'news',
+      title: 'Noticia D',
+      content: 'Contenido de la noticia D.',
+    },
+    {
+      category: 'tutorial',
+      title: 'Tutorial E',
+      content: 'Contenido del tutorial E.',
+    },
+  ])
+
+  readonly categories = ['news', 'blog', 'tutorial'] as const
+
+  selectedCategory = signal<'news' | 'blog' | 'tutorial' | 'all'>('all')
+
+  filteredItems = computed(() => {
+    const cat = this.selectedCategory()
+    const all = this.items()
+    return cat === 'all' ? all : all.filter((item) => item.category === cat)
+  })
 }

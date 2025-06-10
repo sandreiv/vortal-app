@@ -1,0 +1,21 @@
+<div class="grid grid-cols-12 gap-8 mt-4">
+  <div class="col-span-12">
+    <div class="grid grid-cols-12 gap-8">
+      @for (info of currentContactInfo; track info.title) {
+        <div
+          class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-2">
+          <app-contact-info
+            [title]="info.title"
+            [image]="info.image"
+            [email]="info.email"
+            [phone]="info.phone"
+            [website]="info.website || ''"
+            [facebook]="info.facebook || ''"
+            [instagram]="info.instagram || ''"
+            [twitter]="info.twitter || ''">
+          </app-contact-info>
+        </div>
+      }
+    </div>
+  </div>
+</div>

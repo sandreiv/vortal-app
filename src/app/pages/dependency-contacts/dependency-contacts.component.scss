@@ -1,0 +1,70 @@
+.contact-info {
+  padding: 1.5rem;
+  border: none;
+  height: auto;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+
+  &.minimized {
+    min-height: auto;
+    height: auto;
+    padding: 1rem;
+
+    .card-content {
+      display: none;
+    }
+  }
+
+  &.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    margin: 0;
+    border-radius: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .card-content {
+    max-height: 1000px;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    min-height: 50px;
+
+    &.collapsed {
+      max-height: 0;
+      opacity: 0;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .flex-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+
+  .pi {
+    transition: all 0.3s ease;
+  }
+
+  a:hover .pi {
+    transform: scale(1.1);
+  }
+
+  .text-primary {
+    color: var(--primary-color);
+  }
+
+  .hover\:text-primary:hover {
+    color: var(--primary-color);
+  }
+}

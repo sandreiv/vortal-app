@@ -19,6 +19,21 @@
   </div>
 
   <div class="layout-topbar-actions flex items-center">
+    @if (showCardSelector) {
+      <div class="relative">
+        <button
+          class="layout-topbar-action"
+          (mouseenter)="showCardSelectorMenu()">
+          <i class="pi pi-th-large"></i>
+        </button>
+        <div
+          class="card-selector-container hidden absolute right-0 mt-2 z-50"
+          (mouseleave)="hideCardSelectorMenu()">
+          <app-card-selector
+            (cardsChanged)="onCardsChanged($event)"></app-card-selector>
+        </div>
+      </div>
+    }
     <div class="layout-config-menu">
       <button
         type="button"

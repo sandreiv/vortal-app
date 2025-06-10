@@ -1,9 +1,5 @@
 <div class="grid grid-cols-12 gap-8 mt-4">
-  <div class="col-span-12 xl:col-span-3">
-    <app-card-selector
-      (cardsChanged)="onCardsChanged($event)"></app-card-selector>
-  </div>
-  <div class="col-span-12 xl:col-span-9">
+  <div class="col-span-12">
     <div class="grid grid-cols-12 gap-8">
       @if (visibleCards['stats']) {
         <app-stats-widget class="contents"></app-stats-widget>
@@ -29,17 +25,38 @@
         </div>
       }
     </div>
+    <br />
     <div class="grid grid-cols-12 gap-8 mt-4">
+      @if (visibleCards['contact-info']) {}
       @if (visibleCards['news']) {
         <div class="col-span-12 xl:col-span-3">
           <app-news-card></app-news-card>
         </div>
       }
-      @if (visibleCards['revenue']) {
-        <div class="col-span-12 xl:col-span-3">
-          <app-revenue-stream-widget></app-revenue-stream-widget>
+      <div class="col-span-12 xl:col-span-3">
+        <div class="filters">
+          @for (cat of categories; track cat) {
+            <button
+              [class.active]="selectedCategory() === cat"
+              (click)="selectedCategory.set(cat)">
+              {{ cat }}
+            </button> <span> | </span>
+          }
+          <button
+            [class.active]="selectedCategory() === 'all'"
+            (click)="selectedCategory.set('all')">
+            all
+          </button>
         </div>
-      }
+
+        <div class="cards">
+          @for (item of filteredItems(); track item.title) {
+            <app-dynamic-card
+              [title]="item.title"
+              [content]="item.content"></app-dynamic-card>
+          }
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router'
 import { MenuItem } from 'primeng/api'
 import { CommonModule } from '@angular/common'
 import { AppMenuContentComponent } from '../menu-content/menu-content.component'
+
 @Component({
   selector: 'app-menu',
   standalone: true,
@@ -17,38 +18,9 @@ export class AppMenuComponent implements OnInit {
       {
         label: 'Home',
         items: [
-          { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
-          { label: 'Categorias', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
           {
-            label: 'Subcategorias',
+            label: 'Dashboard',
             icon: 'pi pi-fw pi-home',
-            routerLink: ['/'],
-          },
-          { label: 'Productos', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
-          { label: 'Clientes', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
-          { label: 'Proveedores', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
-          { label: 'Ventas', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
-          { label: 'Compras', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
-        ],
-      },
-      {
-        label: 'Configuración',
-        items: [
-          { label: 'Usuarios', icon: 'pi pi-fw pi-user', routerLink: ['/'] },
-          { label: 'Roles', icon: 'pi pi-fw pi-user', routerLink: ['/'] },
-        ],
-      },
-      {
-        label: 'Reportes',
-        items: [
-          {
-            label: 'Reporte de Ventas',
-            icon: 'pi pi-fw pi-user',
-            routerLink: ['/'],
-          },
-          {
-            label: 'Reporte de Compras',
-            icon: 'pi pi-fw pi-user',
             routerLink: ['/'],
           },
         ],
@@ -57,29 +29,26 @@ export class AppMenuComponent implements OnInit {
         label: 'Apps',
         items: [
           {
-            label: 'WhatsApp',
-            icon: 'pi pi-fw pi-whatsapp',
-            routerLink: ['/'],
-          },
-          {
-            label: 'Facebook',
-            icon: 'pi pi-fw pi-facebook',
-            routerLink: ['/'],
-          },
-        ],
-      },
-      {
-        label: 'Contacto',
-        items: [
-          {
-            label: 'WhatsApp',
-            icon: 'pi pi-fw pi-whatsapp',
-            routerLink: ['/'],
-          },
-          {
-            label: 'Facebook',
-            icon: 'pi pi-fw pi-facebook',
-            routerLink: ['/'],
+            label: 'Contacto dependencias',
+            icon: 'pi pi-fw pi-phone',
+            routerLink: ['/contact-info'],
+            items: [
+              {
+                label: 'Facultades',
+                icon: 'pi pi-fw pi-building',
+                routerLink: ['/contact-info/facultades'],
+              },
+              {
+                label: 'Oficinas administrativas',
+                icon: 'pi pi-fw pi-briefcase',
+                routerLink: ['/contact-info/oficinas-administrativas'],
+              },
+              {
+                label: 'Vicerrectorías',
+                icon: 'pi pi-fw pi-users',
+                routerLink: ['/contact-info/vicerrectorias'],
+              },
+            ],
           },
         ],
       },

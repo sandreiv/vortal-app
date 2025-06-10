@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Output } from '@angular/core'
+import { Component, EventEmitter, Output, OnInit } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { CheckboxModule } from 'primeng/checkbox'
 import { FormsModule } from '@angular/forms'
+import { DashboardService } from '../../../services/dashboard.service'
 
 interface CardOption {
   id: string
@@ -14,9 +15,9 @@ interface CardOption {
   standalone: true,
   imports: [CommonModule, CheckboxModule, FormsModule],
   templateUrl: './card-selector.component.html',
-  styleUrl: '../../../../../assets/pages/dashboard/_dashboard.scss',
+  styleUrls: ['../../../../assets/layout/_topbar.scss'],
 })
-export class CardSelectorComponent {
+export class CardSelectorComponent implements OnInit {
   @Output() cardsChanged = new EventEmitter<
     { id: string; visible: boolean }[]
   >()
@@ -24,10 +25,21 @@ export class CardSelectorComponent {
   cardOptions: CardOption[] = [
     { id: 'stats', label: 'Estadísticas', checked: true },
     { id: 'basic-card', label: 'Tarjeta Básica', checked: true },
-    { id: 'revenue', label: 'Flujo de Ingresos', checked: true },
+    { id: 'contact-info', label: 'Información de Contacto', checked: true },
     { id: 'news', label: 'Noticias', checked: true },
     { id: 'apli-cards', label: 'Aplicaciones', checked: true },
   ]
+
+  constructor(private dashboardService: DashboardService) {}
+
+  ngOnInit() {
+    const initialCards = this.dashboardService.getInitialCards()
+    this.cardOptions = this.cardOptions.map((option) => ({
+      ...option,
+      checked:
+        initialCards.find((card) => card.id === option.id)?.visible ?? true,
+    }))
+  }
 
   onCardToggle() {
     const visibleCards = this.cardOptions.map((card) => ({

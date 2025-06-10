@@ -167,3 +167,14 @@
     width: 100%;
   }
 }
+
+.card-selector-container {
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+}
+.card-selector-container.hidden {
+  display: none;
+}

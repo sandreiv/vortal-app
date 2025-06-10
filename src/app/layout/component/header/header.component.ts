@@ -9,6 +9,9 @@ import { Menu, MenuModule } from 'primeng/menu'
 import { ButtonModule } from 'primeng/button'
 import { InputTextModule } from 'primeng/inputtext'
 import { FormsModule } from '@angular/forms'
+import { CardSelectorComponent } from '../card-selector/card-selector.component'
+import { Router } from '@angular/router'
+import { DashboardService } from '../../../services/dashboard.service'
 
 @Component({
   selector: 'app-header',
@@ -22,6 +25,7 @@ import { FormsModule } from '@angular/forms'
     ButtonModule,
     InputTextModule,
     FormsModule,
+    CardSelectorComponent,
   ],
   templateUrl: './header.component.html',
 })
@@ -32,6 +36,8 @@ export class HeaderComponent {
   isFullscreen = false
   isScrolled = false
   searchText = ''
+  showCardSelector = false
+  isCardSelectorVisible = false
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -39,7 +45,6 @@ export class HeaderComponent {
   }
 
   onSearch() {
-    // Aquí puedes implementar la lógica de búsqueda
     console.log('Buscando:', this.searchText)
   }
 
@@ -71,7 +76,15 @@ export class HeaderComponent {
     },
   ]
 
-  constructor(public layoutService: LayoutService) {}
+  constructor(
+    public layoutService: LayoutService,
+    private router: Router,
+    private dashboardService: DashboardService
+  ) {
+    this.router.events.subscribe(() => {
+      this.showCardSelector = this.router.url.includes('/dashboard')
+    })
+  }
 
   toggleDarkMode() {
     this.layoutService.layoutConfig.update((state) => ({
@@ -114,5 +127,31 @@ export class HeaderComponent {
 
   showProfileMenu(event: Event) {
     this.profileMenu.toggle(event)
+  }
+
+  showCardSelectorMenu() {
+    const cardSelectorContainer = document.querySelector(
+      '.card-selector-container'
+    )
+    if (cardSelectorContainer) {
+      cardSelectorContainer.classList.remove('hidden')
+      cardSelectorContainer.classList.add('animate-scalein')
+      this.isCardSelectorVisible = true
+    }
+  }
+
+  hideCardSelectorMenu() {
+    const cardSelectorContainer = document.querySelector(
+      '.card-selector-container'
+    )
+    if (cardSelectorContainer) {
+      cardSelectorContainer.classList.add('hidden')
+      cardSelectorContainer.classList.remove('animate-scalein')
+      this.isCardSelectorVisible = false
+    }
+  }
+
+  onCardsChanged(cards: { id: string; visible: boolean }[]) {
+    this.dashboardService.updateCardsVisibility(cards)
   }
 }
