@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common'
-import { Component } from '@angular/core'
+import { Component, computed } from '@angular/core'
 import { ButtonModule } from 'primeng/button'
 import { MenuModule } from 'primeng/menu'
 import { MenuItemComponent } from '../../../../shared/components/menu-item/menu-item.component'
 import { CardControlsComponent } from '../../../../shared/components/card-controls/card-controls.component'
+import { StyleService } from '../../../../services/style.service'
 
 @Component({
   standalone: true,
@@ -22,6 +23,10 @@ export class BasicCardWidgetComponent {
   menu = null
   isMinimized = false
   isFullscreen = false
+  currentStyle = computed(() => this.styleService.currentStyle())
+
+  constructor(private styleService: StyleService) {}
+
 
   onMinimize() {
     this.isMinimized = true
@@ -33,5 +38,9 @@ export class BasicCardWidgetComponent {
 
   onFullscreen() {
     this.isFullscreen = !this.isFullscreen
+  }
+
+  onStyleChange(style: string) {
+    this.styleService.setStyle(style)
   }
 }

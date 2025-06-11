@@ -1,7 +1,9 @@
-import { Component } from '@angular/core'
+import { Component, computed } from '@angular/core'
+import { CommonModule } from '@angular/common'
 import { TagModule } from 'primeng/tag'
 import { MenuItemComponent } from '../../../../shared/components/menu-item/menu-item.component'
 import { CardControlsComponent } from '../../../../shared/components/card-controls/card-controls.component'
+import { StyleService } from '../../../../services/style.service'
 
 interface NewsItem {
   title: string
@@ -13,12 +15,17 @@ interface NewsItem {
 @Component({
   selector: 'app-news-card',
   standalone: true,
-  imports: [TagModule, MenuItemComponent, CardControlsComponent],
+  imports: [CommonModule, TagModule, MenuItemComponent, CardControlsComponent],
   templateUrl: './news-card.component.html',
   styleUrls: ['../../../../../assets/pages/dashboard/_dashboard.scss'],
 })
 export class NewsCardComponent {
+  currentStyle = computed(() => this.styleService.currentStyle())
   currentIndex = 0
+  menu = null
+  isMinimized = false
+  isFullscreen = false
+
   news: NewsItem[] = [
     {
       title: 'Nueva Actualización del Sistema',
@@ -43,6 +50,8 @@ export class NewsCardComponent {
     },
   ]
 
+  constructor(private styleService: StyleService) {}
+
   nextSlide() {
     this.currentIndex = (this.currentIndex + 1) % this.news.length
   }
@@ -50,5 +59,21 @@ export class NewsCardComponent {
   prevSlide() {
     this.currentIndex =
       (this.currentIndex - 1 + this.news.length) % this.news.length
+  }
+
+  onStyleChange(style: string) {
+    this.styleService.setStyle(style)
+  }
+
+  onMinimize() {
+    this.isMinimized = true
+  }
+
+  onMaximize() {
+    this.isMinimized = false
+  }
+
+  onFullscreen() {
+    this.isFullscreen = !this.isFullscreen
   }
 }

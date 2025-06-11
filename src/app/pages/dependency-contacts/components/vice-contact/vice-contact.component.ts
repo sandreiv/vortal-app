@@ -1,6 +1,4 @@
 import { Component, input } from '@angular/core'
-import { MenuItemComponent } from '../../../../shared/components/menu-item/menu-item.component'
-import { CardControlsComponent } from '../../../../shared/components/card-controls/card-controls.component'
 import { ButtonModule } from 'primeng/button'
 import { CommonModule } from '@angular/common'
 
@@ -8,8 +6,6 @@ import { CommonModule } from '@angular/common'
   selector: 'app-vice-contact',
   standalone: true,
   imports: [
-    CardControlsComponent,
-    MenuItemComponent,
     ButtonModule,
     CommonModule,
   ],

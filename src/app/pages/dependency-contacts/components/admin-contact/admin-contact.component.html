@@ -1,12 +1,14 @@
 <div
   class="card contact-info"
   [class.minimized]="isMinimized"
-  [class.fullscreen]="isFullscreen">
+  [class.fullscreen]="isFullscreen"
+  [class.style-modern]="currentStyle() === 'modern'"
+  [class.style-minimal]="currentStyle() === 'minimal'">
   <div class="flex justify-between items-center">
     <div class="flex items-center gap-4">
       <div class="flex items-center gap-2">
         <img [src]="image()" alt="Logo" class="w-8 h-8 rounded-full" />
-        <div class="font-semibold text-xl">{{ title() }}</div>
+        <div class="font-semibold text-md">{{ title() }}</div>
       </div>
     </div>
     <div class="flex items-center gap-2">

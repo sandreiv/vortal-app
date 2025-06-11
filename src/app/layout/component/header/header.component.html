@@ -35,30 +35,13 @@
       </div>
     }
     <div class="layout-config-menu">
+      <p-menu #styleMenu [popup]="true" [model]="styleMenuItems"></p-menu>
       <button
         type="button"
         class="layout-topbar-action"
-        (click)="toggleDarkMode()">
-        <i
-          [ngClass]="{
-            'pi ': true,
-            'pi-moon': layoutService.isDarkTheme(),
-            'pi-sun': !layoutService.isDarkTheme(),
-          }"></i>
+        (click)="showStyleMenu($event)">
+        <i class="pi pi-palette"></i>
       </button>
-      <div class="relative">
-        <button
-          class="layout-topbar-action layout-topbar-action-highlight"
-          pStyleClass="@next"
-          enterFromClass="hidden"
-          enterActiveClass="animate-scalein"
-          leaveToClass="hidden"
-          leaveActiveClass="animate-fadeout"
-          [hideOnOutsideClick]="true">
-          <i class="pi pi-palette"></i>
-        </button>
-        <app-configurator />
-      </div>
     </div>
 
     <button
@@ -72,18 +55,6 @@
       <i class="pi pi-ellipsis-v"></i>
     </button>
 
-    <div class="layout-topbar-menu hidden lg:block">
-      <div class="layout-topbar-menu-content">
-        <button type="button" class="layout-topbar-action">
-          <i class="pi pi-calendar"></i>
-          <span>Calendar</span>
-        </button>
-        <button type="button" class="layout-topbar-action">
-          <i class="pi pi-inbox"></i>
-          <span>Messages</span>
-        </button>
-      </div>
-    </div>
     <div class="border-l border-gray-300 h-5"></div>
     <div class="layout-topbar-menu hidden lg:block">
       <div class="layout-topbar-menu-content">
@@ -108,4 +79,11 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="flex align-items-center gap-2">
+  <p-menu #styleMenu [popup]="true" [model]="styleMenuItems"></p-menu>
+  <button pButton type="button" icon="pi pi-palette" (click)="showStyleMenu($event)" class="p-button-rounded p-button-text"> </button>
+  <button pButton type="button" icon="pi pi-user" (click)="showProfileMenu($event)" class="p-button-rounded p-button-text" pTooltip="Perfil" tooltipPosition="bottom"> </button>
+  <p-menu #profileMenu [popup]="true" [model]="profileMenuItems"></p-menu>
 </div>

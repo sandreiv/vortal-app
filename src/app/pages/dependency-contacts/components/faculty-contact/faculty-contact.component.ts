@@ -1,14 +1,12 @@
 import { Component, input } from '@angular/core'
-import { MenuItemComponent } from '../../../../shared/components/menu-item/menu-item.component'
-import { CardControlsComponent } from '../../../../shared/components/card-controls/card-controls.component'
 import { ButtonModule } from 'primeng/button'
 
 @Component({
   selector: 'app-faculty-contact',
   standalone: true,
-  imports: [CardControlsComponent, MenuItemComponent, ButtonModule],
+  imports: [ ButtonModule],
   templateUrl: './faculty-contact.component.html',
-  styleUrls: ['../../dependency-contacts.component.scss'],
+  styleUrls: ['./faculty-contact.component.scss'],
 })
 export class FacultyContactComponent {
   menu = null
@@ -28,7 +26,6 @@ export class FacultyContactComponent {
   }
 
   title = input('')
-  image = input('')
   email = input('')
   phone = input('')
   facebook = input('')

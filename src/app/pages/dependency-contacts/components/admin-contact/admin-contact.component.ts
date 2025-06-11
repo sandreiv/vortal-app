@@ -1,7 +1,8 @@
-import { Component, input } from '@angular/core'
+import { Component, computed, input } from '@angular/core'
 import { MenuItemComponent } from '../../../../shared/components/menu-item/menu-item.component'
 import { CardControlsComponent } from '../../../../shared/components/card-controls/card-controls.component'
 import { ButtonModule } from 'primeng/button'
+import { StyleService } from '../../../../services/style.service'
 
 @Component({
   selector: 'app-contact-info',
@@ -14,6 +15,10 @@ export class AdminContactComponent {
   menu = null
   isMinimized = false
   isFullscreen = false
+
+  currentStyle = computed(() => this.styleService.currentStyle())
+
+  constructor(private styleService: StyleService) {}
 
   onMinimize() {
     this.isMinimized = true
