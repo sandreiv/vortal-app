@@ -4,7 +4,6 @@ import { StatsWidgetComponent } from './components/statswidget'
 import { BasicCardWidgetComponent } from './components/basic-card-widget/basic-card-widget.component'
 import { ApliCardComponent } from './components/apli-card/apli-card.component'
 import { NewsCardComponent } from './components/news-card/news-card.component'
-import { DynamicCardComponent } from './components/dynamic-card/dynamic-card'
 import { DashboardService } from '../../services/dashboard.service'
 import { Subscription } from 'rxjs'
 import { computed } from '@angular/core'
@@ -24,7 +23,6 @@ interface Item {
     BasicCardWidgetComponent,
     ApliCardComponent,
     NewsCardComponent,
-    DynamicCardComponent,
   ],
   templateUrl: './dashboard.component.html',
 })

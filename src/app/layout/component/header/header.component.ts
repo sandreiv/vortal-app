@@ -1,10 +1,9 @@
-import { Component, output, ViewChild, HostListener } from '@angular/core'
+import { Component, output, ViewChild, HostListener, computed } from '@angular/core'
 import { MenuItem } from 'primeng/api'
 import { RouterModule } from '@angular/router'
 import { CommonModule } from '@angular/common'
 import { StyleClassModule } from 'primeng/styleclass'
 import { LayoutService } from '../../service/layout.service'
-import { ConfiguratorComponent } from '../configurator/configurator.component'
 import { Menu, MenuModule } from 'primeng/menu'
 import { ButtonModule } from 'primeng/button'
 import { InputTextModule } from 'primeng/inputtext'
@@ -12,6 +11,8 @@ import { FormsModule } from '@angular/forms'
 import { CardSelectorComponent } from '../card-selector/card-selector.component'
 import { Router } from '@angular/router'
 import { DashboardService } from '../../../services/dashboard.service'
+import { StyleService } from '../../../services/style.service'
+import { TooltipModule } from 'primeng/tooltip'
 
 @Component({
   selector: 'app-header',
@@ -20,17 +21,26 @@ import { DashboardService } from '../../../services/dashboard.service'
     RouterModule,
     CommonModule,
     StyleClassModule,
-    ConfiguratorComponent,
     MenuModule,
     ButtonModule,
     InputTextModule,
     FormsModule,
     CardSelectorComponent,
+    TooltipModule
   ],
   templateUrl: './header.component.html',
+  styles: [`
+    .configurator-container {
+      position: absolute;
+      right: 0;
+      top: 100%;
+      z-index: 1000;
+    }
+  `]
 })
 export class HeaderComponent {
   @ViewChild('profileMenu') profileMenu!: Menu
+  @ViewChild('styleMenu') styleMenu!: Menu
   readonly fullscreen = output<void>()
   menu: Menu | null = null
   isFullscreen = false
@@ -38,6 +48,31 @@ export class HeaderComponent {
   searchText = ''
   showCardSelector = false
   isCardSelectorVisible = false
+  
+  currentStyle = computed(() => this.styleService.currentStyle())
+
+  styleMenuItems: MenuItem[] = [
+    {
+      label: 'Estilos',
+      items: [
+        {
+          label: 'Default',
+          icon: 'pi pi-circle',
+          command: () => this.changeStyle('default')
+        },
+        {
+          label: 'Moderno',
+          icon: 'pi pi-circle-fill',
+          command: () => this.changeStyle('modern')
+        },
+        {
+          label: 'Minimal',
+          icon: 'pi pi-circle',
+          command: () => this.changeStyle('minimal')
+        }
+      ]
+    }
+  ]
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -79,11 +114,20 @@ export class HeaderComponent {
   constructor(
     public layoutService: LayoutService,
     private router: Router,
-    private dashboardService: DashboardService
+    private dashboardService: DashboardService,
+    private styleService: StyleService
   ) {
     this.router.events.subscribe(() => {
       this.showCardSelector = this.router.url.includes('/dashboard')
     })
+  }
+
+  changeStyle(style: string) {
+    this.styleService.setStyle(style)
+  }
+
+  showStyleMenu(event: Event) {
+    this.styleMenu.toggle(event)
   }
 
   toggleDarkMode() {

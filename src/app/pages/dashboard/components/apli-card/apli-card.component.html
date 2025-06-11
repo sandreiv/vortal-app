@@ -1,5 +1,12 @@
 <div
-  class="card apli-card mb-0 transition-transform duration-300 ease-in-out hover:-translate-y-2.5 hover:shadow-lg cursor-pointer">
+  class="card apli-card mb-0 transition-transform duration-300 ease-in-out hover:-translate-y-2.5 hover:shadow-lg cursor-pointer"
+  [class.minimized]="isMinimized"
+  [class.fullscreen]="isFullscreen"
+  [class.style-modern]="currentStyle() === 'modern'"
+  [class.style-minimal]="currentStyle() === 'minimal'">
+  <div class="flex justify-end">
+    <app-menu-item (fullscreen)="onFullscreen()"> </app-menu-item>
+  </div>
   <div class="flex justify-center mb-4">
     <img [src]="image()" alt="Logo" class="rounded-full w-24 h-24" />
   </div>
@@ -8,4 +15,6 @@
     <br /><br />
     <span class="text-muted-color">{{ description() }}</span>
   </div>
+    
 </div>
+
