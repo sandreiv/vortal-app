@@ -2,6 +2,13 @@ import { Component, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { StyleService } from '../../services/style.service'
+import { MenuTaskComponent } from './components/menu-task/menu-task.component';
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextarea } from 'primeng/inputtextarea';
+import { FormsModule } from '@angular/forms';
+
 interface Task {
   id: number;
   title: string;
@@ -12,16 +19,30 @@ interface Task {
 @Component({
   selector: 'app-kanban',
   standalone: true,
-  imports: [CommonModule, DragDropModule],
+  imports: [
+    CommonModule, 
+    DragDropModule, 
+    MenuTaskComponent,
+    DialogModule,
+    ButtonModule,
+    InputTextModule,
+    InputTextarea,
+    FormsModule
+  ],
   templateUrl: './kanban.component.html',
   styleUrls: ['./kanban.component.scss']
 })
 export class KanbanComponent {
   currentStyle = computed(() => this.styleService.currentStyle())
+  displayEditDialog = signal(false);
+  editingTask = signal<Task | null>(null);
+  editedTitle = signal('');
+  editedDescription = signal('');
 
   constructor(private styleService: StyleService) {}
+    
 
-
+  
   pendientes = signal<Task[]>([
     {
       id: 1,
@@ -66,5 +87,52 @@ export class KanbanComponent {
         event.currentIndex,
       );
     }
+  }
+
+  editTask(task: Task) {
+    console.log('Editando tarea:', task);
+    this.editingTask.set(task);
+    this.editedTitle.set(task.title);
+    this.editedDescription.set(task.description);
+    this.displayEditDialog.set(true);
+  }
+
+  saveTask() {
+    if (this.editingTask()) {
+      const task = this.editingTask()!;
+      const updatedTask = {
+        ...task,
+        title: this.editedTitle(),
+        description: this.editedDescription()
+      };
+
+      // Actualizar la tarea en la lista correspondiente
+      if (task.status === 'pendiente') {
+        this.pendientes.update(tasks => 
+          tasks.map(t => t.id === task.id ? updatedTask : t)
+        );
+      } else if (task.status === 'en-progreso') {
+        this.enProgreso.update(tasks => 
+          tasks.map(t => t.id === task.id ? updatedTask : t)
+        );
+      } else {
+        this.completadas.update(tasks => 
+          tasks.map(t => t.id === task.id ? updatedTask : t)
+        );
+      }
+
+      this.displayEditDialog.set(false);
+      this.editingTask.set(null);
+    }
+  }
+
+  cancelEdit() {
+    this.displayEditDialog.set(false);
+    this.editingTask.set(null);
+  }
+
+  deleteTask(task: Task) {
+    // Implementar lógica de eliminación
+    console.log('Eliminar tarea:', task);
   }
 } 

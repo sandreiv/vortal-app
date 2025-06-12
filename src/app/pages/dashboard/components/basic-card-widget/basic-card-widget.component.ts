@@ -17,7 +17,7 @@ import { StyleService } from '../../../../services/style.service'
     MenuItemComponent,
   ],
   templateUrl: './basic-card-widget.component.html',
-  styleUrls: ['../../../../../assets/pages/dashboard/_dashboard.scss'],
+  styleUrls: ['./../../dashboard.component.scss'],
 })
 export class BasicCardWidgetComponent {
   menu = null

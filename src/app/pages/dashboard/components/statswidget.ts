@@ -134,7 +134,7 @@ import { StyleService } from '../../../services/style.service'
         <span class="text-muted-color">responded</span>
       </div>
     </div>`,
-  styleUrls: ['../../../../assets/pages/dashboard/_dashboard.scss'],
+  styleUrls: ['./../dashboard.component.scss'],
 })
 export class StatsWidgetComponent {
   title = input('')

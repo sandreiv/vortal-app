@@ -17,7 +17,7 @@ interface NewsItem {
   standalone: true,
   imports: [CommonModule, TagModule, MenuItemComponent, CardControlsComponent],
   templateUrl: './news-card.component.html',
-  styleUrls: ['../../../../../assets/pages/dashboard/_dashboard.scss'],
+  styleUrls: ['./../../dashboard.component.scss'],
 })
 export class NewsCardComponent {
   currentStyle = computed(() => this.styleService.currentStyle())

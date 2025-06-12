@@ -10,8 +10,12 @@
             <h3 class="column-header">Pendientes</h3>
             @for (task of pendientes(); track task.id) {
             <div class="task-card" cdkDrag>
-                <div class="task-header">
-                <h4>{{ task.title }}</h4>
+                <div class="task-header flex justify-between">
+                    <h4>{{ task.title }}</h4>
+                    <app-menu-task 
+                        (onEdit)="editTask(task)"
+                        (onDelete)="deleteTask(task)">
+                    </app-menu-task>
                 </div>
                 <p class="task-description">{{ task.description }}</p>
             </div>
@@ -29,8 +33,12 @@
         <h3 class="column-header">En Progreso</h3>
         @for (task of enProgreso(); track task.id) {
         <div class="task-card" cdkDrag>
-            <div class="task-header">
-            <h4>{{ task.title }}</h4>
+            <div class="task-header flex justify-between">
+                <h4>{{ task.title }}</h4>
+                <app-menu-task 
+                    (onEdit)="editTask(task)"
+                    (onDelete)="deleteTask(task)">
+                </app-menu-task>
             </div>
             <p class="task-description">{{ task.description }}</p>
         </div>
@@ -48,12 +56,63 @@
         <h3 class="column-header">Completadas</h3>
         @for (task of completadas(); track task.id) {
         <div class="task-card" cdkDrag>
-            <div class="task-header">
-            <h4>{{ task.title }}</h4>
+            <div class="task-header flex justify-between">
+                <h4>{{ task.title }}</h4>
+                <app-menu-task 
+                    (onEdit)="editTask(task)"
+                    (onDelete)="deleteTask(task)">
+                </app-menu-task>
             </div>
             <p class="task-description">{{ task.description }}</p>
         </div>
         }
     </div>
 </div>
+  
+<p-dialog 
+  [visible]="displayEditDialog()" 
+  (visibleChange)="displayEditDialog.set($event)"
+  [style]="{width: '450px'}" 
+  header="Editar Tarea" 
+  [modal]="true" 
+  [draggable]="false" 
+  [resizable]="false">
+  <div class="flex flex-col gap-4">
+    <div class="field">
+      <label for="title" class="block mb-2">Título</label>
+      <input 
+        id="title" 
+        type="text" 
+        pInputText 
+        [ngModel]="editedTitle()"
+        (ngModelChange)="editedTitle.set($event)" 
+        class="w-full" />
+    </div>
+    <div class="field">
+      <label for="description" class="block mb-2">Descripción</label>
+      <textarea 
+        id="description" 
+        pInputTextarea 
+        [ngModel]="editedDescription()"
+        (ngModelChange)="editedDescription.set($event)"
+        [rows]="5" 
+        class="w-full"></textarea>
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <div class="flex justify-end gap-2">
+      <button 
+        pButton 
+        label="Cancelar" 
+        class="p-button-text" 
+        (click)="cancelEdit()">
+      </button>
+      <button 
+        pButton 
+        label="Guardar" 
+        (click)="saveTask()">
+      </button>
+    </div>
+  </ng-template>
+</p-dialog>
   
