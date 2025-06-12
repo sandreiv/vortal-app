@@ -1,0 +1,59 @@
+<div class="grid grid-cols-12 gap-8 mt-4">
+    <div class="col-span-12 xl:col-span-4">
+        <div class="kanban-column" cdkDropList #pendientesList="cdkDropList"
+            [cdkDropListData]="pendientes()"
+            [cdkDropListConnectedTo]="[enProgresoList, completadasList]"
+            (cdkDropListDropped)="drop($event)"
+            [class.style-modern]="currentStyle() === 'modern'"
+            [class.style-minimal]="currentStyle() === 'minimal'"
+            >
+            <h3 class="column-header">Pendientes</h3>
+            @for (task of pendientes(); track task.id) {
+            <div class="task-card" cdkDrag>
+                <div class="task-header">
+                <h4>{{ task.title }}</h4>
+                </div>
+                <p class="task-description">{{ task.description }}</p>
+            </div>
+            }
+        </div>
+    </div>
+
+    <div class="col-span-12 xl:col-span-4">
+            <div class="kanban-column" cdkDropList #enProgresoList="cdkDropList"
+            [cdkDropListData]="enProgreso()"
+            [cdkDropListConnectedTo]="[pendientesList, completadasList]"
+            (cdkDropListDropped)="drop($event)"
+            [class.style-modern]="currentStyle() === 'modern'"
+            [class.style-minimal]="currentStyle() === 'minimal'">
+        <h3 class="column-header">En Progreso</h3>
+        @for (task of enProgreso(); track task.id) {
+        <div class="task-card" cdkDrag>
+            <div class="task-header">
+            <h4>{{ task.title }}</h4>
+            </div>
+            <p class="task-description">{{ task.description }}</p>
+        </div>
+        }
+        </div>
+   </div>
+  
+    <div class="col-span-12 xl:col-span-4">
+        <div class="kanban-column" cdkDropList #completadasList="cdkDropList"
+        [cdkDropListData]="completadas()"
+        [cdkDropListConnectedTo]="[pendientesList, enProgresoList]"
+        (cdkDropListDropped)="drop($event)"
+        [class.style-modern]="currentStyle() === 'modern'"
+        [class.style-minimal]="currentStyle() === 'minimal'">
+        <h3 class="column-header">Completadas</h3>
+        @for (task of completadas(); track task.id) {
+        <div class="task-card" cdkDrag>
+            <div class="task-header">
+            <h4>{{ task.title }}</h4>
+            </div>
+            <p class="task-description">{{ task.description }}</p>
+        </div>
+        }
+    </div>
+</div>
+  

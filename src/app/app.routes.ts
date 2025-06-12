@@ -6,7 +6,8 @@ import { DependencyContactsComponent } from './pages/dependency-contacts/depende
 import { FacultyContactComponent } from './pages/dependency-contacts/components/faculty-contact/faculty-contact.component'
 import { AdminContactComponent } from './pages/dependency-contacts/components/admin-contact/admin-contact.component'
 import { ViceContactComponent } from './pages/dependency-contacts/components/vice-contact/vice-contact.component'
-import { CalendarComponent } from './pages/calendar/calendar'
+import { CalendarComponent } from './pages/calendar/calendar.component'
+import { KanbanComponent } from './pages/kanban/kanban.component'
 
 export const routes: Routes = [
   {
@@ -30,6 +31,7 @@ export const routes: Routes = [
       },
 
       { path: 'calendar', component: CalendarComponent },
+      { path: 'kanban', component: KanbanComponent },
     ],
   },
 ]

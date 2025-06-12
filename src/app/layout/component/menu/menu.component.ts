@@ -34,6 +34,11 @@ export class AppMenuComponent implements OnInit {
             routerLink: ['/calendar'],
           },
           {
+            label: 'Progreso de tareas',
+            icon: 'pi pi-fw pi-list',
+            routerLink: ['/kanban'],
+          },
+          {
             label: 'Contacto dependencias',
             icon: 'pi pi-fw pi-phone',
             routerLink: ['/contact-info'],

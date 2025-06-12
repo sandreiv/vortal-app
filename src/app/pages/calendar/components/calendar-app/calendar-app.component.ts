@@ -6,7 +6,7 @@ import { Calendar, EventApi } from '@fullcalendar/core/index.js'
 @Component({
   selector: 'app-calendar-app',
   templateUrl: './calendar-app.component.html',
-  styleUrls: ['../../calendar.scss'],
+  styleUrls: ['../../calendar.component.scss'],
 })
 export class CalendarAppComponent {
   currentStyle = computed(() => this.styleService.currentStyle())

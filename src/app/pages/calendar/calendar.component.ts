@@ -27,8 +27,8 @@ interface EventData {
 
 @Component({
   selector: 'app-calendar',
-  templateUrl: './calendar.html',
-  styleUrls: ['./calendar.scss'],
+  templateUrl: './calendar.component.html',
+  styleUrls: ['./calendar.component.scss'],
   standalone: true,
   imports: [
     CommonModule,

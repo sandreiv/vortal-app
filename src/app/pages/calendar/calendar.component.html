@@ -16,7 +16,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addEventModalLabel">Add / Edit Event</h5>
+        <h5 class="modal-title" id="addEventModalLabel">Agregar / Editar Evento</h5>
         <button
           type="button"
           class="btn-close"
@@ -27,7 +27,7 @@
       <div class="modal-body">
         <form>
           <div class="mb-3">
-            <label class="form-label" for="eventTitle">Event Title</label>
+            <label class="form-label" for="eventTitle">Título del Evento</label>
             <input
               id="eventTitle"
               type="text"
@@ -85,7 +85,7 @@
           Close
         </button>
         <button type="button" class="btn btn-primary" (click)="addEvent()">
-          {{ selectedEvent() ? 'Update Event' : 'Add Event' }}
+          {{ selectedEvent() ? 'Actualizar Evento' : 'Agregar Evento' }}
         </button>
       </div>
     </div>

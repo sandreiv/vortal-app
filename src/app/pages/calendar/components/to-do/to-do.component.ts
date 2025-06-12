@@ -15,7 +15,7 @@ interface TodoItem {
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './to-do.component.html',
-  styleUrls: ['../../calendar.scss'],
+  styleUrls: ['../../calendar.component.scss'],
 })
 export class ToDoComponent {
   // Signal para el output
