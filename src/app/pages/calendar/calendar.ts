@@ -1,13 +1,14 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Calendar, EventInput } from '@fullcalendar/core';
+import { EventApi } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { Modal } from 'bootstrap';
-import { NgClass } from '@angular/common'; 
 import { NgStyle } from '@angular/common';
 import { CommonModule } from '@angular/common'; // <-- IMPORTANTE
+import { Modal } from 'bootstrap';
+import { CalendarAppComponent } from './components/calendar-app/calendar-app.component';
 
 
 
@@ -17,13 +18,13 @@ import { CommonModule } from '@angular/common'; // <-- IMPORTANTE
   templateUrl: './calendar.html',
   styleUrls: ['./calendar.scss'],
   standalone: true,
-  imports: [CommonModule,FormsModule, NgClass, NgStyle],
+  imports: [CommonModule,FormsModule, NgStyle, CalendarAppComponent],
 })
 export class CalendarComponent implements AfterViewInit {
 
   private calendar!: Calendar;
 
-  public selectedEvent: any = null;
+  public selectedEvent: EventApi | null = null;
 
   public newEvent = {
     title: '',
@@ -42,16 +43,8 @@ export class CalendarComponent implements AfterViewInit {
   ];
 
 
-  public openAddEventModal(): void {
-    this.selectedEvent = null;
-    this.newEvent = { title: '', start: '', end: '', color: '' };
 
-    const modalEl = document.getElementById('addEventModal');
-    if (modalEl) {
-      const modal = new Modal(modalEl);
-      modal.show();
-    }
-  }
+  
 
   public addEvent(): void {
     if (!this.newEvent.title || !this.newEvent.start) return;
@@ -64,7 +57,6 @@ export class CalendarComponent implements AfterViewInit {
       this.selectedEvent.setProp('backgroundColor', this.newEvent.color);
       this.selectedEvent.setProp('borderColor', this.newEvent.color);
     } else {
-      // Crear nuevo
       const event: EventInput = {
         title: this.newEvent.title,
         start: this.newEvent.start,
@@ -148,7 +140,5 @@ export class CalendarComponent implements AfterViewInit {
     this.newEvent.color = color;
     console.log('Color seleccionado:', color);
   }
-
-
 
 }

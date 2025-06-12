@@ -1,32 +1,9 @@
-<div class="grid grid-cols-12 gap-8 mt-4">
-  <div class="col-span-12 xl:col-span-8">
-    <div class="bg-white shadow rounded p-4">
-      
-      <!-- Encabezado y botón -->
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <div>
-          <h4 class="mb-0 fw-semibold">Calendar</h4>
-          <nav aria-label="breadcrumb" class="d-none d-sm-block">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Calendar</li>
-            </ol>
-          </nav>
-        </div>
-        <button class="btn btn-primary" (click)="openAddEventModal()">
-          <i class="bi bi-plus-lg me-2"></i> Add Event
-        </button>
-      </div>
-
-      <!-- Calendario -->
-      <div id="calendar-container">
-        <div id="calendar"></div>
-      </div>
-    </div>
+<div class="grid grid-cols-12 gap-8 mt-4" >
+  <div class="col-span-12 xl:col-span-8" >
+    <app-calendar-app></app-calendar-app>
   </div>
 </div>
 
-<!-- Modal Add/Edit -->
 <div class="modal fade" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -38,14 +15,11 @@
 
       <div class="modal-body">
         <form>
-
-          <!-- Título -->
           <div class="mb-3">
             <label class="form-label" for="eventTitle">Event Title</label>
             <input id="eventTitle" type="text" class="form-control" [(ngModel)]="newEvent.title" name="title" />
           </div>
 
-          <!-- Colores -->
           <div class="mb-3">
             <span class="form-label d-block mb-2">Event Color</span>
             <div class="d-flex flex-wrap gap-2">
