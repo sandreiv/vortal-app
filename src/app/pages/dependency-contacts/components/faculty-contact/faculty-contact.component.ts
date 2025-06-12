@@ -4,7 +4,7 @@ import { ButtonModule } from 'primeng/button'
 @Component({
   selector: 'app-faculty-contact',
   standalone: true,
-  imports: [ ButtonModule],
+  imports: [ButtonModule],
   templateUrl: './faculty-contact.component.html',
   styleUrls: ['./faculty-contact.component.scss'],
 })

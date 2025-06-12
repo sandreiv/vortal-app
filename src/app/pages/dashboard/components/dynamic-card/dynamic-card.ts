@@ -12,18 +12,19 @@ import { StyleService } from '../../../../services/style.service'
       [header]="title"
       [style]="{ width: '100%' }"
       [class.style-modern]="currentStyle() === 'modern'"
-      [class.style-minimal]="currentStyle() === 'minimal'"
-    >
+      [class.style-minimal]="currentStyle() === 'minimal'">
       <ng-content></ng-content>
     </p-card>
   `,
-  styles: [`
-    :host ::ng-deep {
-      .p-card {
-        transition: all 0.3s ease;
+  styles: [
+    `
+      :host ::ng-deep {
+        .p-card {
+          transition: all 0.3s ease;
+        }
       }
-    }
-  `]
+    `,
+  ],
 })
 export class DynamicCardComponent {
   @Input() title = ''

@@ -5,10 +5,7 @@ import { CommonModule } from '@angular/common'
 @Component({
   selector: 'app-vice-contact',
   standalone: true,
-  imports: [
-    ButtonModule,
-    CommonModule,
-  ],
+  imports: [ButtonModule, CommonModule],
   templateUrl: './vice-contact.component.html',
   styleUrls: ['../../dependency-contacts.component.scss'],
 })

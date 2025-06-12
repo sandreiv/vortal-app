@@ -7,11 +7,12 @@ import { StyleService } from '../../../services/style.service'
   selector: 'app-stats-widget',
   imports: [MenuItemComponent],
   template: `<div class="col-span-12 lg:col-span-6 xl:col-span-3">
-      <div class="card mb-0"
-      [class.minimized]="isMinimized"
-      [class.fullscreen]="isFullscreen"
-      [class.style-modern]="currentStyle() === 'modern'"
-      [class.style-minimal]="currentStyle() === 'minimal'">
+      <div
+        class="card mb-0"
+        [class.minimized]="isMinimized"
+        [class.fullscreen]="isFullscreen"
+        [class.style-modern]="currentStyle() === 'modern'"
+        [class.style-minimal]="currentStyle() === 'minimal'">
         <div class="flex justify-between mb-4">
           <div>
             <span class="block text-muted-color font-medium mb-4">Orders</span>
@@ -27,18 +28,22 @@ import { StyleService } from '../../../services/style.service'
           </div>
         </div>
         <div class="flex justify-end">
-          <app-menu-item (fullscreen)="onFullscreen()" (styleChange)="onStyleChange($event)"> </app-menu-item>
+          <app-menu-item
+            (fullscreen)="onFullscreen()"
+            (styleChange)="onStyleChange($event)">
+          </app-menu-item>
         </div>
         <span class="text-primary font-medium">24 new </span>
         <span class="text-muted-color">since last visit</span>
       </div>
     </div>
     <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-      <div class="card mb-0"
-      [class.minimized]="isMinimized"
-      [class.fullscreen]="isFullscreen"
-      [class.style-modern]="currentStyle() === 'modern'"
-      [class.style-minimal]="currentStyle() === 'minimal'">
+      <div
+        class="card mb-0"
+        [class.minimized]="isMinimized"
+        [class.fullscreen]="isFullscreen"
+        [class.style-modern]="currentStyle() === 'modern'"
+        [class.style-minimal]="currentStyle() === 'minimal'">
         <div class="flex justify-between mb-4">
           <div>
             <span class="block text-muted-color font-medium mb-4">Revenue</span>
@@ -54,18 +59,22 @@ import { StyleService } from '../../../services/style.service'
           </div>
         </div>
         <div class="flex justify-end">
-          <app-menu-item (fullscreen)="onFullscreen()" (styleChange)="onStyleChange($event)"> </app-menu-item>
+          <app-menu-item
+            (fullscreen)="onFullscreen()"
+            (styleChange)="onStyleChange($event)">
+          </app-menu-item>
         </div>
         <span class="text-primary font-medium">%52+ </span>
         <span class="text-muted-color">since last week</span>
       </div>
     </div>
     <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-      <div class="card mb-0"
-      [class.minimized]="isMinimized"
-      [class.fullscreen]="isFullscreen"
-      [class.style-modern]="currentStyle() === 'modern'"
-      [class.style-minimal]="currentStyle() === 'minimal'">
+      <div
+        class="card mb-0"
+        [class.minimized]="isMinimized"
+        [class.fullscreen]="isFullscreen"
+        [class.style-modern]="currentStyle() === 'modern'"
+        [class.style-minimal]="currentStyle() === 'minimal'">
         <div class="flex justify-between mb-4">
           <div>
             <span class="block text-muted-color font-medium mb-4"
@@ -83,18 +92,22 @@ import { StyleService } from '../../../services/style.service'
           </div>
         </div>
         <div class="flex justify-end">
-          <app-menu-item (fullscreen)="onFullscreen()" (styleChange)="onStyleChange($event)"> </app-menu-item>
+          <app-menu-item
+            (fullscreen)="onFullscreen()"
+            (styleChange)="onStyleChange($event)">
+          </app-menu-item>
         </div>
         <span class="text-primary font-medium">520 </span>
         <span class="text-muted-color">newly registered</span>
       </div>
     </div>
     <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-      <div class="card mb-0"
-      [class.minimized]="isMinimized"
-      [class.fullscreen]="isFullscreen"
-      [class.style-modern]="currentStyle() === 'modern'"
-      [class.style-minimal]="currentStyle() === 'minimal'">
+      <div
+        class="card mb-0"
+        [class.minimized]="isMinimized"
+        [class.fullscreen]="isFullscreen"
+        [class.style-modern]="currentStyle() === 'modern'"
+        [class.style-minimal]="currentStyle() === 'minimal'">
         <div class="flex justify-between mb-4">
           <div>
             <span class="block text-muted-color font-medium mb-4"
@@ -112,7 +125,10 @@ import { StyleService } from '../../../services/style.service'
           </div>
         </div>
         <div class="flex justify-end">
-          <app-menu-item (fullscreen)="onFullscreen()" (styleChange)="onStyleChange($event)"> </app-menu-item>
+          <app-menu-item
+            (fullscreen)="onFullscreen()"
+            (styleChange)="onStyleChange($event)">
+          </app-menu-item>
         </div>
         <span class="text-primary font-medium">85 </span>
         <span class="text-muted-color">responded</span>

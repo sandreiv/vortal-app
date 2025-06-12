@@ -83,7 +83,19 @@
 
 <div class="flex align-items-center gap-2">
   <p-menu #styleMenu [popup]="true" [model]="styleMenuItems"></p-menu>
-  <button pButton type="button" icon="pi pi-palette" (click)="showStyleMenu($event)" class="p-button-rounded p-button-text"> </button>
-  <button pButton type="button" icon="pi pi-user" (click)="showProfileMenu($event)" class="p-button-rounded p-button-text" pTooltip="Perfil" tooltipPosition="bottom"> </button>
+  <button
+    pButton
+    type="button"
+    icon="pi pi-palette"
+    (click)="showStyleMenu($event)"
+    class="p-button-rounded p-button-text"></button>
+  <button
+    pButton
+    type="button"
+    icon="pi pi-user"
+    (click)="showProfileMenu($event)"
+    class="p-button-rounded p-button-text"
+    pTooltip="Perfil"
+    tooltipPosition="bottom"></button>
   <p-menu #profileMenu [popup]="true" [model]="profileMenuItems"></p-menu>
 </div>

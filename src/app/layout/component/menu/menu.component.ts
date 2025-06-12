@@ -28,12 +28,12 @@ export class AppMenuComponent implements OnInit {
       {
         label: 'Apps',
         items: [
-           {
+          {
             label: 'Calendar',
             icon: 'pi pi-fw pi-calendar',
-            routerLink: ['/calendar'], 
-            },
-            {
+            routerLink: ['/calendar'],
+          },
+          {
             label: 'Contacto dependencias',
             icon: 'pi pi-fw pi-phone',
             routerLink: ['/contact-info'],

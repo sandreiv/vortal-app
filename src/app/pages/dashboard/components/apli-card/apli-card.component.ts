@@ -8,12 +8,7 @@ import { StyleService } from '../../../../services/style.service'
 @Component({
   selector: 'app-apli-card',
   standalone: true,
-  imports: [
-    CommonModule,
-    ButtonModule,
-    MenuModule,
-    MenuItemComponent,
-  ],
+  imports: [CommonModule, ButtonModule, MenuModule, MenuItemComponent],
   templateUrl: './apli-card.component.html',
   styleUrls: ['./apli-card.component.scss'],
 })

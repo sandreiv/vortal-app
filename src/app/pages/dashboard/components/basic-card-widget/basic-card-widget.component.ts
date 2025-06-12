@@ -27,7 +27,6 @@ export class BasicCardWidgetComponent {
 
   constructor(private styleService: StyleService) {}
 
-
   onMinimize() {
     this.isMinimized = true
   }

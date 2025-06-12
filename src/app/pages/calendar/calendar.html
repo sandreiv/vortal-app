@@ -1,66 +1,93 @@
-<div class="grid grid-cols-12 gap-8 mt-4" >
-  <div class="col-span-12 xl:col-span-8" >
+<div class="grid grid-cols-12 gap-8 mt-4">
+  <div class="col-span-12 xl:col-span-8">
     <app-calendar-app></app-calendar-app>
+  </div>
+  <div class="col-span-12 xl:col-span-4">
+    <app-to-do [todoAdded]="onTodoAdded.bind(this)"></app-to-do>
   </div>
 </div>
 
-<div class="modal fade" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="addEventModal"
+  tabindex="-1"
+  aria-labelledby="addEventModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-
       <div class="modal-header">
         <h5 class="modal-title" id="addEventModalLabel">Add / Edit Event</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"></button>
       </div>
 
       <div class="modal-body">
         <form>
           <div class="mb-3">
             <label class="form-label" for="eventTitle">Event Title</label>
-            <input id="eventTitle" type="text" class="form-control" [(ngModel)]="newEvent.title" name="title" />
+            <input
+              id="eventTitle"
+              type="text"
+              class="form-control"
+              [ngModel]="newEvent().title"
+              (ngModelChange)="updateEventTitle($event)"
+              name="title" />
           </div>
 
           <div class="mb-3">
             <span class="form-label d-block mb-2">Event Color</span>
             <div class="d-flex flex-wrap gap-2">
+              @for (color of colorOptions; track color.value) {
               <div
-                *ngFor="let color of colorOptions"
                 (click)="selectColor(color.value)"
                 class="rounded-circle"
                 [ngStyle]="{
-                  width: '30px',
-                  height: '30px',
-                  backgroundColor: color.value,
-                  border: newEvent.color === color.value ? '3px solid #000' : '2px solid #ccc',
-                  cursor: 'pointer'
-                }"
-                [title]="color.label"
-              ></div>
+                    width: '30px',
+                    height: '30px',
+                    backgroundColor: color.value,
+                    border: newEvent().color === color.value ? '3px solid #000' : '2px solid #ccc',
+                    cursor: 'pointer'
+                  }"
+                [title]="color.label"></div>
+              }
             </div>
           </div>
 
-          <!-- Fecha inicio -->
           <div class="mb-3">
             <label class="form-label" for="eventStart">Enter Start Date</label>
-            <input id="eventStart" type="date" class="form-control" [(ngModel)]="newEvent.start" name="start" />
+            <input
+              id="eventStart"
+              type="date"
+              class="form-control"
+              [ngModel]="newEvent().start"
+              (ngModelChange)="updateEventStart($event)"
+              name="start" />
           </div>
 
-          <!-- Fecha fin -->
           <div class="mb-3">
             <label class="form-label" for="eventEnd">Enter End Date</label>
-            <input id="eventEnd" type="date" class="form-control" [(ngModel)]="newEvent.end" name="end" />
+            <input
+              id="eventEnd"
+              type="date"
+              class="form-control"
+              [ngModel]="newEvent().end"
+              (ngModelChange)="updateEventEnd($event)"
+              name="end" />
           </div>
-
         </form>
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-light" data-bs-dismiss="modal">
+          Close
+        </button>
         <button type="button" class="btn btn-primary" (click)="addEvent()">
-          {{ selectedEvent ? 'Update Event' : 'Add Event' }}
+          {{ selectedEvent() ? 'Update Event' : 'Add Event' }}
         </button>
       </div>
-
     </div>
   </div>
 </div>

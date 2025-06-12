@@ -1,4 +1,10 @@
-import { Component, output, ViewChild, HostListener, computed } from '@angular/core'
+import {
+  Component,
+  output,
+  ViewChild,
+  HostListener,
+  computed,
+} from '@angular/core'
 import { MenuItem } from 'primeng/api'
 import { RouterModule } from '@angular/router'
 import { CommonModule } from '@angular/common'
@@ -26,17 +32,19 @@ import { TooltipModule } from 'primeng/tooltip'
     InputTextModule,
     FormsModule,
     CardSelectorComponent,
-    TooltipModule
+    TooltipModule,
   ],
   templateUrl: './header.component.html',
-  styles: [`
-    .configurator-container {
-      position: absolute;
-      right: 0;
-      top: 100%;
-      z-index: 1000;
-    }
-  `]
+  styles: [
+    `
+      .configurator-container {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        z-index: 1000;
+      }
+    `,
+  ],
 })
 export class HeaderComponent {
   @ViewChild('profileMenu') profileMenu!: Menu
@@ -48,7 +56,7 @@ export class HeaderComponent {
   searchText = ''
   showCardSelector = false
   isCardSelectorVisible = false
-  
+
   currentStyle = computed(() => this.styleService.currentStyle())
 
   styleMenuItems: MenuItem[] = [
@@ -58,20 +66,20 @@ export class HeaderComponent {
         {
           label: 'Default',
           icon: 'pi pi-circle',
-          command: () => this.changeStyle('default')
+          command: () => this.changeStyle('default'),
         },
         {
           label: 'Moderno',
           icon: 'pi pi-circle-fill',
-          command: () => this.changeStyle('modern')
+          command: () => this.changeStyle('modern'),
         },
         {
           label: 'Minimal',
           icon: 'pi pi-circle',
-          command: () => this.changeStyle('minimal')
-        }
-      ]
-    }
+          command: () => this.changeStyle('minimal'),
+        },
+      ],
+    },
   ]
 
   @HostListener('window:scroll', [])

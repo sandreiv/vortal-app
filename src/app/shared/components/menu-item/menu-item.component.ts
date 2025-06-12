@@ -1,8 +1,8 @@
-import { CommonModule } from '@angular/common';
-import { Component, computed, signal, output } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
-import { MenuModule } from 'primeng/menu';
-import type { MenuItem } from 'primeng/api';
+import { CommonModule } from '@angular/common'
+import { Component, computed, signal, output } from '@angular/core'
+import { ButtonModule } from 'primeng/button'
+import { MenuModule } from 'primeng/menu'
+import type { MenuItem } from 'primeng/api'
 
 @Component({
   selector: 'app-menu-item',
@@ -13,25 +13,23 @@ import type { MenuItem } from 'primeng/api';
 })
 export class MenuItemComponent {
   // Emitters para que el padre se entere
-  readonly fullscreen   = output<void>();
-  readonly styleChange  = output<string>();
+  readonly fullscreen = output<void>()
+  readonly styleChange = output<string>()
 
   // Estado interno
-  private isFullscreen = signal(false);
+  private isFullscreen = signal(false)
 
   // Señal computada para el modelo de menú
   readonly menuItems = computed<MenuItem[]>(() => [
     {
       label: this.isFullscreen() ? 'Volver' : 'Pantalla completa',
-      icon:  this.isFullscreen() ? 'pi pi-times' : 'pi pi-plus',
-      command: () => this.toggleFullscreen()
-    }
-  ]);
+      icon: this.isFullscreen() ? 'pi pi-times' : 'pi pi-plus',
+      command: () => this.toggleFullscreen(),
+    },
+  ])
 
   private toggleFullscreen() {
-    this.isFullscreen.update(v => !v);
-    this.fullscreen.emit();
+    this.isFullscreen.update((v) => !v)
+    this.fullscreen.emit()
   }
-
-
 }
