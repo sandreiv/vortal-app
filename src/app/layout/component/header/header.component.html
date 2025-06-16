@@ -35,7 +35,7 @@
       </div>
     }
     <div class="layout-config-menu">
-      <p-menu #styleMenu [popup]="true" [model]="styleMenuItems"></p-menu>
+      <p-menu #styleMenu [popup]="true" [model]="styleMenuItems" appendTo="body"></p-menu>
       <button
         type="button"
         class="layout-topbar-action"
@@ -61,7 +61,7 @@
         <button
           type="button"
           class="layout-topbar-action"
-          (mouseenter)="showProfileMenu($event)">
+          (mouseenter)="showProfileMenu($event)"> 
           <img
             class="w-11 h-11 rounded-full object-contain"
             src="assets/layout/img/hombre.png"
@@ -75,27 +75,10 @@
           #profileMenu
           [popup]="true"
           [model]="profileMenuItems"
-          (mouseleave)="profileMenu.hide()"></p-menu>
+          (mouseleave)="profileMenu.hide()" 
+          appendTo="body"></p-menu>
       </div>
     </div>
   </div>
 </div>
 
-<div class="flex align-items-center gap-2">
-  <p-menu #styleMenu [popup]="true" [model]="styleMenuItems"></p-menu>
-  <button
-    pButton
-    type="button"
-    icon="pi pi-palette"
-    (click)="showStyleMenu($event)"
-    class="p-button-rounded p-button-text"></button>
-  <button
-    pButton
-    type="button"
-    icon="pi pi-user"
-    (click)="showProfileMenu($event)"
-    class="p-button-rounded p-button-text"
-    pTooltip="Perfil"
-    tooltipPosition="bottom"></button>
-  <p-menu #profileMenu [popup]="true" [model]="profileMenuItems"></p-menu>
-</div>

@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common'
 import { Modal } from 'bootstrap'
 import { CalendarAppComponent } from './components/calendar-app/calendar-app.component'
 import { ToDoComponent } from './components/to-do/to-do.component'
+import { BreadcrumbComponent } from '../../shared/components/breadcrumb/breadcrumb.component'
 
 interface TodoItem {
   id: number
@@ -36,6 +37,7 @@ interface EventData {
     NgStyle,
     CalendarAppComponent,
     ToDoComponent,
+    BreadcrumbComponent,
   ],
 })
 export class CalendarComponent implements AfterViewInit {

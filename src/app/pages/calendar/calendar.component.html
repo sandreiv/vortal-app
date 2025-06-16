@@ -1,3 +1,4 @@
+<app-breadcrumb/>
 <div class="grid grid-cols-12 gap-8 mt-4">
   <div class="col-span-12 xl:col-span-8">
     <app-calendar-app></app-calendar-app>
@@ -16,7 +17,9 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addEventModalLabel">Agregar / Editar Evento</h5>
+        <h5 class="modal-title" id="addEventModalLabel">
+          Agregar / Editar Evento
+        </h5>
         <button
           type="button"
           class="btn-close"
@@ -41,17 +44,20 @@
             <span class="form-label d-block mb-2">Event Color</span>
             <div class="d-flex flex-wrap gap-2">
               @for (color of colorOptions; track color.value) {
-              <div
-                (click)="selectColor(color.value)"
-                class="rounded-circle"
-                [ngStyle]="{
+                <div
+                  (click)="selectColor(color.value)"
+                  class="rounded-circle"
+                  [ngStyle]="{
                     width: '30px',
                     height: '30px',
                     backgroundColor: color.value,
-                    border: newEvent().color === color.value ? '3px solid #000' : '2px solid #ccc',
-                    cursor: 'pointer'
+                    border:
+                      newEvent().color === color.value
+                        ? '3px solid #000'
+                        : '2px solid #ccc',
+                    cursor: 'pointer',
                   }"
-                [title]="color.label"></div>
+                  [title]="color.label"></div>
               }
             </div>
           </div>

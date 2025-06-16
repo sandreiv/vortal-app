@@ -1,0 +1,18 @@
+<nav aria-label="breadcrumb" class="p-2 bg-gray-100 rounded-md mb-4">
+  <ol class="flex flex-wrap list-none ">
+    @for (crumb of breadcrumbs(); track crumb; let last = $last) {
+      <li class="flex items-center">
+        @if (!last) {
+          <a>
+            {{ crumb.label }}
+          </a>
+        } @else {
+          <span class="font-semibold">{{ crumb.label }}</span>
+        }
+        @if (!last) {
+          <span class="mx-2">/</span>
+        }
+      </li>
+    }
+  </ol>
+</nav>

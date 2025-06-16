@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, signal } from '@angular/core'
-import { CommonModule } from '@angular/common'
+
 import { StatsWidgetComponent } from './components/statswidget'
 import { BasicCardWidgetComponent } from './components/basic-card-widget/basic-card-widget.component'
 import { ApliCardComponent } from './components/apli-card/apli-card.component'
@@ -7,6 +7,7 @@ import { NewsCardComponent } from './components/news-card/news-card.component'
 import { DashboardService } from '../../services/dashboard.service'
 import { Subscription } from 'rxjs'
 import { computed } from '@angular/core'
+import { BreadcrumbComponent } from '../../shared/components/breadcrumb/breadcrumb.component'
 
 interface Item {
   category: 'news' | 'blog' | 'tutorial'
@@ -18,11 +19,11 @@ interface Item {
   selector: 'app-dashboard',
   standalone: true,
   imports: [
-    CommonModule,
     StatsWidgetComponent,
     BasicCardWidgetComponent,
     ApliCardComponent,
     NewsCardComponent,
+    BreadcrumbComponent,
   ],
   templateUrl: './dashboard.component.html',
 })

@@ -1,5 +1,5 @@
 import { Component, computed, signal, model } from '@angular/core'
-import { CommonModule } from '@angular/common'
+
 import { FormsModule } from '@angular/forms'
 import { StyleService } from '../../../../services/style.service'
 
@@ -13,7 +13,7 @@ interface TodoItem {
 @Component({
   selector: 'app-to-do',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   templateUrl: './to-do.component.html',
   styleUrls: ['../../calendar.component.scss'],
 })

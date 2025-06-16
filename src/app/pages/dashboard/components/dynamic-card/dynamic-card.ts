@@ -1,12 +1,12 @@
 import { Component, Input, computed } from '@angular/core'
-import { CommonModule } from '@angular/common'
+
 import { CardModule } from 'primeng/card'
 import { ButtonModule } from 'primeng/button'
 import { StyleService } from '../../../../services/style.service'
 @Component({
   selector: 'app-dynamic-card',
   standalone: true,
-  imports: [CommonModule, CardModule, ButtonModule],
+  imports: [CardModule, ButtonModule],
   template: `
     <p-card
       [header]="title"

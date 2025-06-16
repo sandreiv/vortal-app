@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common'
 import { Component, computed } from '@angular/core'
 import { ButtonModule } from 'primeng/button'
 import { MenuModule } from 'primeng/menu'
@@ -9,13 +8,7 @@ import { StyleService } from '../../../../services/style.service'
 @Component({
   standalone: true,
   selector: 'app-basic-card-widget',
-  imports: [
-    CommonModule,
-    ButtonModule,
-    MenuModule,
-    CardControlsComponent,
-    MenuItemComponent,
-  ],
+  imports: [ButtonModule, MenuModule, CardControlsComponent, MenuItemComponent],
   templateUrl: './basic-card-widget.component.html',
   styleUrls: ['./../../dashboard.component.scss'],
 })

@@ -1,5 +1,5 @@
 import { Component, computed } from '@angular/core'
-import { CommonModule } from '@angular/common'
+
 import { TagModule } from 'primeng/tag'
 import { MenuItemComponent } from '../../../../shared/components/menu-item/menu-item.component'
 import { CardControlsComponent } from '../../../../shared/components/card-controls/card-controls.component'
@@ -15,7 +15,7 @@ interface NewsItem {
 @Component({
   selector: 'app-news-card',
   standalone: true,
-  imports: [CommonModule, TagModule, MenuItemComponent, CardControlsComponent],
+  imports: [TagModule, MenuItemComponent, CardControlsComponent],
   templateUrl: './news-card.component.html',
   styleUrls: ['./../../dashboard.component.scss'],
 })

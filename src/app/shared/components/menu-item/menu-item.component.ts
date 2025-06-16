@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common'
 import { Component, computed, signal, output } from '@angular/core'
 import { ButtonModule } from 'primeng/button'
 import { MenuModule } from 'primeng/menu'
@@ -7,7 +6,7 @@ import type { MenuItem } from 'primeng/api'
 @Component({
   selector: 'app-menu-item',
   standalone: true,
-  imports: [CommonModule, ButtonModule, MenuModule],
+  imports: [ButtonModule, MenuModule],
   templateUrl: './menu-item.component.html',
   styleUrls: ['./menu-item.component.scss'],
 })

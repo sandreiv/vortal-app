@@ -1,0 +1,48 @@
+<div class="card-control-bar mb-4"
+    [class.style-modern]="currentStyle() === 'modern'"
+    [class.style-minimal]="currentStyle() === 'minimal'">
+    <div class="flex justify-center mb-4 gap-8">
+        <div class="flex items-center justify-center">
+            <i class="pi pi-list"></i>
+            Todas las notas
+        </div>
+        <div class="flex items-center justify-center">
+            <i class="pi pi-star"></i>
+            Importantes
+        </div>
+        <div class="flex justify-between mb-4">
+            <button class="btn btn-primary" (click)="openModal()">
+                <i class="pi pi-plus"></i>
+                Agregar Nota
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" [class.show]="isModalOpen()" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Agregar Nota</h5>
+                <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close">×</button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="addNote()">
+                    <div class="mb-3">
+                        <label for="noteTitle" class="form-label">Título</label>
+                        <input type="text" class="form-control" id="noteTitle" [(ngModel)]="newNoteTitle" name="title" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="noteContent" class="form-label">Contenido</label>
+                        <textarea class="form-control" id="noteContent" [(ngModel)]="newNoteContent" name="content" required></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    

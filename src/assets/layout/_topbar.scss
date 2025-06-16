@@ -178,3 +178,25 @@
 .card-selector-container.hidden {
   display: none;
 }
+
+.configurator-container {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 1000;
+}
+
+:host ::ng-deep {
+  .p-menu {
+    position: fixed !important;
+    z-index: 1000;
+  }
+}
+
+.layout-config-menu {
+  position: relative;
+}
+
+.layout-topbar-menu {
+  position: relative;
+}

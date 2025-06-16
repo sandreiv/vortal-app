@@ -1,11 +1,10 @@
 import { Component, input } from '@angular/core'
 import { ButtonModule } from 'primeng/button'
-import { CommonModule } from '@angular/common'
 
 @Component({
   selector: 'app-vice-contact',
   standalone: true,
-  imports: [ButtonModule, CommonModule],
+  imports: [ButtonModule],
   templateUrl: './vice-contact.component.html',
   styleUrls: ['../../dependency-contacts.component.scss'],
 })

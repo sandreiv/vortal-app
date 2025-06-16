@@ -1,6 +1,6 @@
 import { Component, input, computed } from '@angular/core'
 import { MenuItemComponent } from '../../../../shared/components/menu-item/menu-item.component'
-import { CommonModule } from '@angular/common'
+
 import { ButtonModule } from 'primeng/button'
 import { MenuModule } from 'primeng/menu'
 import { StyleService } from '../../../../services/style.service'
@@ -8,7 +8,7 @@ import { StyleService } from '../../../../services/style.service'
 @Component({
   selector: 'app-apli-card',
   standalone: true,
-  imports: [CommonModule, ButtonModule, MenuModule, MenuItemComponent],
+  imports: [ButtonModule, MenuModule, MenuItemComponent],
   templateUrl: './apli-card.component.html',
   styleUrls: ['./apli-card.component.scss'],
 })

@@ -1,0 +1,16 @@
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    padding: 0 0.5rem;
+    color: gray;
+  }
+  
+  .breadcrumb-item.active {
+    font-weight: bold;
+  }

@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common'
 import { Component, output } from '@angular/core'
 import { ButtonModule } from 'primeng/button'
 import { MenuModule, Menu } from 'primeng/menu'
@@ -6,7 +5,7 @@ import { MenuModule, Menu } from 'primeng/menu'
 @Component({
   selector: 'app-card-controls',
   standalone: true,
-  imports: [CommonModule, ButtonModule, MenuModule],
+  imports: [ButtonModule, MenuModule],
   templateUrl: './card-controls.component.html',
   styleUrls: ['./card-controls.component.scss'],
 })

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { NavigationEnd, Router, RouterModule } from '@angular/router'
 import { AdminContactComponent } from './components/admin-contact/admin-contact.component'
 import { filter } from 'rxjs/operators'
-import { CommonModule } from '@angular/common'
+import { BreadcrumbComponent } from '../../shared/components/breadcrumb/breadcrumb.component'
 
 interface ContactInfo {
   title: string
@@ -18,7 +18,7 @@ interface ContactInfo {
 @Component({
   selector: 'app-dependency-contacts',
   standalone: true,
-  imports: [RouterModule, AdminContactComponent, CommonModule],
+  imports: [RouterModule, AdminContactComponent, BreadcrumbComponent],
   templateUrl: './dependency-contacts.component.html',
   styleUrls: ['./dependency-contacts.component.scss'],
 })

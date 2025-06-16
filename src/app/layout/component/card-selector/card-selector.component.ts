@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core'
-import { CommonModule } from '@angular/common'
+import { Component, OnInit, output } from '@angular/core'
+
 import { CheckboxModule } from 'primeng/checkbox'
 import { FormsModule } from '@angular/forms'
 import { DashboardService } from '../../../services/dashboard.service'
@@ -13,13 +13,16 @@ interface CardOption {
 @Component({
   selector: 'app-card-selector',
   standalone: true,
-  imports: [CommonModule, CheckboxModule, FormsModule],
+  imports: [CheckboxModule, FormsModule],
   templateUrl: './card-selector.component.html',
   styleUrls: ['../../../../assets/layout/_topbar.scss'],
 })
 export class CardSelectorComponent implements OnInit {
-  @Output() cardsChanged = new EventEmitter<
-    { id: string; visible: boolean }[]
+  readonly cardsChanged = output<
+    {
+      id: string
+      visible: boolean
+    }[]
   >()
 
   cardOptions: CardOption[] = [
