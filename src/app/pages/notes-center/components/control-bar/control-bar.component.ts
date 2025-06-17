@@ -25,6 +25,8 @@ export class ControlBarComponent {
   constructor(private styleService: StyleService) {}
 
   // output para mostrar todas las notas
+  // se llama cuando se hace click en el botón de "Todas las notas".
+  // se emite el valor de filterImportant al componente padre. 
   readonly showAllNotes = output<void>()
   readonly showImportantNotes = output<void>()
 

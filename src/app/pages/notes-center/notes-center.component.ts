@@ -15,17 +15,23 @@ import { Note } from './models/note.model';
 export class NotesCenterComponent {
   @ViewChild(NotesComponent) notesComponent!: NotesComponent;
   
-  // signal para filtrar las notas importantes
+  // signal para filtrar las notas importantes. Componente padre.
+  // se inicializa en false para mostrar todas las notas.
+  // 1. primer paso del flujo de datos.
   filterImportant = signal(false);
+
   onNoteAdded(note: Note) {
     this.notesComponent.addNote(note);
   }
 
+  // se llama cuando se hace click en el botón de "Todas las notas".
+  // se setea el valor de filterImportant a false para mostrar todas las notas.
+  // 2. segundo paso del flujo de datos. 
   onShowAllNotes() {
     this.filterImportant.set(false);
   }
 
-  onToggleImportantNotes() {
+  onShowImportantNotes() {
     this.filterImportant.set(true);
   }
 }

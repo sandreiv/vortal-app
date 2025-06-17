@@ -14,7 +14,11 @@ import { Note } from '../../models/note.model';
 export class NotesComponent {
   currentStyle = computed(() => this.styleService.currentStyle())
   notes = signal<Note[]>([])
+
   // input para filtrar las notas importantes
+  // se inicializa en false para mostrar todas las notas.
+  // se recibe del componente padre. Actualiza solo cuando el componente padre cambia.
+  // 3. tercer paso del flujo de datos.
   filterImportant = input<boolean>()
 
   constructor(private styleService: StyleService) {}
@@ -40,6 +44,10 @@ export class NotesComponent {
     this.notes.update(notes => notes.filter(note => note.id !== id))
   }
 
+
+  // 4. cuarto paso del flujo de datos.
+  // se calcula el valor de filteredNotes.
+  // se actualiza solo cuando el valor de filterImportant cambia.
   readonly filteredNotes = computed(() => {
     const allNotes = this.notes();
     return this.filterImportant() ? allNotes.filter(n => n.isImportant) : allNotes;
