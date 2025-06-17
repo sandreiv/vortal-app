@@ -1,12 +1,28 @@
-<div class="grid grid-cols-12 gap-8 mt-4">
-  <div class="col-span-12 xl:col-span-8">
+<div class="grid grid-cols-12 gap-8 mt-4 relative">
+  <div class="col-span-12 xl:col-span-8 relative">
     <app-calendar-app></app-calendar-app>
+
+    <!-- Zona de papelera (visible solo durante drag) -->
+    <div
+      id="trash-bin"
+      class="fixed bottom-6 right-6 z-50 w-16 h-16 border border-gray-500 rounded-full flex items-center justify-center shadow transition-opacity duration-300 bg-transparent"
+      [class.opacity-100]="isDragging"
+      [class.opacity-0]="!isDragging"
+      [class.pointer-events-none]="!isDragging">
+      <i class="bi bi-trash" style="font-size: 20px; color: #333;"></i>
+    </div>
   </div>
+
   <div class="col-span-12 xl:col-span-4">
-    <app-to-do [todoAdded]="onTodoAdded.bind(this)"></app-to-do>
+    <app-to-do
+      [todoListSignal]="todos"
+      [todoAdded]="onTodoAdded.bind(this)"
+      [removeEventByTodoId]="removeEventByTodoId.bind(this)">
+    </app-to-do>
   </div>
 </div>
 
+<!-- Modal Add/Edit -->
 <div
   class="modal fade"
   id="addEventModal"
@@ -16,7 +32,9 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addEventModalLabel">Agregar / Editar Evento</h5>
+        <h5 class="modal-title" id="addEventModalLabel">
+          {{ isEditingTodo() ? 'Agregar / Editar Tarea' : 'Agregar / Editar Evento' }}
+        </h5>
         <button
           type="button"
           class="btn-close"
@@ -27,7 +45,9 @@
       <div class="modal-body">
         <form>
           <div class="mb-3">
-            <label class="form-label" for="eventTitle">Título del Evento</label>
+            <label class="form-label" for="eventTitle">
+              {{ isEditingTodo() ? 'Título de la Tarea' : 'Título del Evento' }}
+            </label>
             <input
               id="eventTitle"
               type="text"
@@ -38,20 +58,22 @@
           </div>
 
           <div class="mb-3">
-            <span class="form-label d-block mb-2">Event Color</span>
+            <span class="form-label d-block mb-2">
+              {{ isEditingTodo() ? 'Color de la Tarea' : 'Color del Evento' }}
+            </span>
             <div class="d-flex flex-wrap gap-2">
               @for (color of colorOptions; track color.value) {
-              <div
-                (click)="selectColor(color.value)"
-                class="rounded-circle"
-                [ngStyle]="{
+                <div
+                  (click)="selectColor(color.value)"
+                  class="rounded-circle"
+                  [ngStyle]="{
                     width: '30px',
                     height: '30px',
                     backgroundColor: color.value,
                     border: newEvent().color === color.value ? '3px solid #000' : '2px solid #ccc',
                     cursor: 'pointer'
                   }"
-                [title]="color.label"></div>
+                  [title]="color.label"></div>
               }
             </div>
           </div>
@@ -67,7 +89,8 @@
               name="start" />
           </div>
 
-          <div class="mb-3">
+          <!-- Solo mostrar el campo End Date si no es una tarea -->
+          <div class="mb-3" *ngIf="!isEditingTodo()">
             <label class="form-label" for="eventEnd">Enter End Date</label>
             <input
               id="eventEnd"
@@ -85,9 +108,33 @@
           Close
         </button>
         <button type="button" class="btn btn-primary" (click)="addEvent()">
-          {{ selectedEvent() ? 'Actualizar Evento' : 'Agregar Evento' }}
+          {{
+            selectedEvent()
+              ? (isEditingTodo() ? 'Actualizar Tarea' : 'Actualizar Evento')
+              : (isEditingTodo() ? 'Agregar Tarea' : 'Agregar Evento')
+          }}
         </button>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- ✅ TOAST de Confirmación Eliminación -->
+<div
+  class="toast position-fixed bottom-0 end-0 m-4"
+  id="deleteToast"
+  role="alert"
+  aria-live="assertive"
+  aria-atomic="true">
+  <div class="toast-header bg-danger text-white">
+    <strong class="me-auto">Elemento eliminado</strong>
+    <button
+      type="button"
+      class="btn-close btn-close-white"
+      data-bs-dismiss="toast"
+      aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    El evento o tarea fue eliminado correctamente.
   </div>
 </div>

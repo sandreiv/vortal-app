@@ -4,7 +4,8 @@
   [class.style-minimal]="currentStyle() === 'minimal'">
   <h3 class="text-xl font-bold mb-4">Lista de Tareas</h3>
 
-  <div class="flex flex-row gap-2">
+  <!-- Formulario de nueva tarea -->
+  <div class="flex flex-row gap-2 mb-2">
     <input
       type="text"
       [ngModel]="newTodoTitle()"
@@ -18,38 +19,62 @@
       (ngModelChange)="newTodoDate.set($event)"
       class="w-1/3 p-2 border rounded" />
   </div>
+
+  <!-- Paleta de colores -->
+  <div class="mb-2">
+    <span class="text-sm font-medium text-gray-600 mb-1 block">Color de la Tarea</span>
+    <div class="flex flex-wrap gap-2">
+      @for (color of colorOptions; track color.value) {
+        <div
+          (click)="selectedColor.set(color.value)"
+          class="rounded-full"
+          [ngStyle]="{
+            width: '30px',
+            height: '30px',
+            backgroundColor: color.value,
+            border: selectedColor() === color.value ? '3px solid #000' : '2px solid #ccc',
+            cursor: 'pointer'
+          }"
+          [title]="color.label">
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Botón agregar -->
   <div>
-    <button class="btn btn-primary mt-6" (click)="addTodo()">
-        <i class="pi pi-plus"></i>
-        Agregar
+    <button class="btn btn-primary mt-4" (click)="addTodo()">
+      <i class="pi pi-plus"></i>
+      Agregar
     </button>
   </div>
- 
-<div class="mt-4">
+
+  <!-- Lista de tareas -->
+  <div class="mt-4">
     <ul class="space-y-2">
-        @for (todo of todos(); track todo.id) {
-          <li
-            class="flex items-center justify-between p-2 border rounded"
-            [class.bg-gray-50]="todo.completed">
-            <div class="flex items-center">
-              <input
-                type="checkbox"
-                [checked]="todo.completed"
-                (change)="toggleTodo(todo)"
-                class="mr-2" />
-              <span [class.line-through]="todo.completed">{{ todo.title }}</span>
-            </div>
-            <div class="flex items-center">
-              <span class="text-sm text-gray-500 mr-2">{{ todo.date }}</span>
-              <button
-                (click)="deleteTodo(todo)"
-                class="text-red-500 hover:text-red-700">
-                ×
-              </button>
-            </div>
-          </li>
-        }
-      </ul>
-</div>
-  
+      @for (todo of todos(); track todo.id) {
+        <li
+          class="flex items-center justify-between p-2 border rounded"
+          [ngStyle]="{ backgroundColor: todo.color || 'transparent' }"
+          [class.bg-gray-50]="todo.completed">
+          <div class="flex items-center">
+            <input
+              type="checkbox"
+              [checked]="todo.completed"
+              (change)="toggleTodo(todo)"
+              class="mr-2" />
+            <span [class.line-through]="todo.completed">{{ todo.title }}</span>
+          </div>
+          <div class="flex items-center">
+            <span class="text-sm text-gray-500 mr-2">{{ todo.date }}</span>
+            <button
+              (click)="deleteTodo(todo)"
+              class="text-red-500 hover:text-red-700">
+              ×
+            </button>
+          </div>
+        </li>
+      }
+    </ul>
+  </div>
 </div>
