@@ -1,13 +1,16 @@
-import { Component, computed, signal, output } from '@angular/core';
+import { Component, computed, signal, output, ViewChild } from '@angular/core';
 import { StyleService } from '../../../../services/style.service';
 import { FormsModule } from '@angular/forms';
+import { NotesMenuComponent } from '../notes-menu/notes-menu.component';
 
 interface Note {
   id: number
   title: string
   content: string
   createdAt: Date
+  isImportant: boolean
 }
+
 
 @Component({
   selector: 'app-control-bar',
@@ -17,8 +20,14 @@ interface Note {
   styleUrl: './control-bar.component.scss'
 })
 export class ControlBarComponent {
+  @ViewChild(NotesMenuComponent) notesMenuComponent!: NotesMenuComponent
   currentStyle = computed(() => this.styleService.currentStyle())
   constructor(private styleService: StyleService) {}
+
+  // output para mostrar todas las notas
+  readonly showAllNotes = output<void>()
+  readonly showImportantNotes = output<void>()
+
 
   noteAdded = output<Note>()
 
@@ -44,6 +53,7 @@ export class ControlBarComponent {
         title: this.newNoteTitle(),
         content: this.newNoteContent(),
         createdAt: new Date(),
+        isImportant: false,
       }
 
       this.noteAdded.emit(newNote)

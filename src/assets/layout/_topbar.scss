@@ -200,3 +200,17 @@
 .layout-topbar-menu {
   position: relative;
 }
+
+.apps-menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: var(--surface-card);
+  border-radius: 50%;
+}
+
+.small-chevron {
+  font-size: 0.75rem !important;
+}

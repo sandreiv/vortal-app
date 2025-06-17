@@ -1,5 +1,5 @@
 <div class="layout-topbar" [ngClass]="{ 'shadow-md': isScrolled }">
-  <div class="layout-topbar-logo-container flex items-center">
+  <div class="layout-topbar-logo-container flex items-center gap-4">
     <button
       class="layout-menu-button layout-topbar-action"
       (click)="layoutService.onMenuToggle()">
@@ -15,6 +15,16 @@
           [(ngModel)]="searchText"
           (input)="onSearch()" />
       </div>
+    </div>
+    <div class="apps-menu-button flex items-center">
+      <p-menu #appsMenu [popup]="true" [model]="appsMenuItems" appendTo="body"></p-menu>
+      <button
+        type="button"
+        class="layout-topbar-action"
+        (click)="showAppsMenu($event)">
+        Apps
+        <i class="pi pi-fw pi-chevron-down ml-1 small-chevron"></i>
+      </button>
     </div>
   </div>
 

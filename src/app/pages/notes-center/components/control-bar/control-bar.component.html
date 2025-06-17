@@ -1,22 +1,24 @@
-<div class="card-control-bar mb-4"
+<div class="card-control-bar mb-4 flex justify-center gap-8"
     [class.style-modern]="currentStyle() === 'modern'"
     [class.style-minimal]="currentStyle() === 'minimal'">
-    <div class="flex justify-center mb-4 gap-8">
-        <div class="flex items-center justify-center">
-            <i class="pi pi-list"></i>
-            Todas las notas
+        <div class="flex items-center justify-center gap-2">
+            <button class="btn btn-primary" (click)="showAllNotes.emit()">
+                <i class="pi pi-list"></i>
+                Todas las notas
+            </button>
         </div>
-        <div class="flex items-center justify-center">
-            <i class="pi pi-star"></i>
-            Importantes
+        <div class="flex items-center justify-center gap-2">
+            <button class="btn btn-primary" (click)="showImportantNotes.emit()">
+                <i class="pi pi-star"></i>
+                Importantes
+            </button>
         </div>
-        <div class="flex justify-between mb-4">
+        <div class="flex items-center justify-center gap-2">
             <button class="btn btn-primary" (click)="openModal()">
                 <i class="pi pi-plus"></i>
                 Agregar Nota
             </button>
         </div>
-    </div>
 </div>
 
 <div class="modal" [class.show]="isModalOpen()" tabindex="-1" role="dialog" aria-hidden="true">

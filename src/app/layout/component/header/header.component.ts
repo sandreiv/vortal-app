@@ -4,12 +4,13 @@ import {
   ViewChild,
   HostListener,
   computed,
+  ChangeDetectorRef,
 } from '@angular/core'
 import { MenuItem } from 'primeng/api'
 import { RouterModule } from '@angular/router'
 import { CommonModule } from '@angular/common'
 import { StyleClassModule } from 'primeng/styleclass'
-import { LayoutService } from '../../service/layout.service'
+import { LayoutService } from '../../../services/layout.service'
 import { Menu, MenuModule } from 'primeng/menu'
 import { ButtonModule } from 'primeng/button'
 import { InputTextModule } from 'primeng/inputtext'
@@ -43,12 +44,13 @@ import { TooltipModule } from 'primeng/tooltip'
         top: 100%;
         z-index: 1000;
       }
-    `,
+    `,  
   ],
 })
 export class HeaderComponent {
   @ViewChild('profileMenu') profileMenu!: Menu
   @ViewChild('styleMenu') styleMenu!: Menu
+  @ViewChild('appsMenu') appsMenu!: Menu
   readonly fullscreen = output<void>()
   menu: Menu | null = null
   isFullscreen = false
@@ -61,24 +63,46 @@ export class HeaderComponent {
 
   styleMenuItems: MenuItem[] = [
     {
-      label: 'Estilos',
+      label: 'Estilos Aplicación',
       items: [
+        { separator: true },
         {
           label: 'Default',
+          styleValue: 'default',
           icon: 'pi pi-circle',
           command: () => this.changeStyle('default'),
         },
         {
           label: 'Moderno',
-          icon: 'pi pi-circle-fill',
+          styleValue: 'modern',
+          icon: 'pi pi-circle',
           command: () => this.changeStyle('modern'),
         },
         {
           label: 'Minimal',
+          styleValue: 'minimal',
           icon: 'pi pi-circle',
           command: () => this.changeStyle('minimal'),
         },
       ],
+    },
+  ]
+
+  appsMenuItems: MenuItem[] = [
+    {
+      label: 'Notas',
+      icon: 'pi pi-fw pi-file',
+      command: () => this.router.navigate(['/apps/notes']),
+    },  
+    {
+      label: 'Progreso de tareas',
+      icon: 'pi pi-fw pi-list',
+      command: () => this.router.navigate(['/apps/kanban']),
+    },
+    {
+      label: 'Calendario',
+      icon: 'pi pi-fw pi-calendar',
+      command: () => this.router.navigate(['/apps/calendar']),
     },
   ]
 
@@ -123,7 +147,8 @@ export class HeaderComponent {
     public layoutService: LayoutService,
     private router: Router,
     private dashboardService: DashboardService,
-    private styleService: StyleService
+    private styleService: StyleService,
+    private cdr: ChangeDetectorRef
   ) {
     this.router.events.subscribe(() => {
       this.showCardSelector = this.router.url.includes('/dashboard')
@@ -135,7 +160,26 @@ export class HeaderComponent {
   }
 
   showStyleMenu(event: Event) {
-    this.styleMenu.toggle(event)
+    const current = this.currentStyle();
+  
+    const updatedItems: (MenuItem & { styleValue?: string })[] = this.styleMenuItems[0].items?.map(item => ({
+      ...item,
+      icon: (item as MenuItem & { styleValue?: string }).styleValue === current ? 'pi pi-check-circle' : 'pi pi-circle',
+    })) || [];
+  
+    this.styleMenuItems = [
+      {
+        label: 'Estilos Aplicación',
+        items: updatedItems,
+      },
+    ];
+  
+    this.cdr.detectChanges(); // fuerza el render
+    this.styleMenu.toggle(event);
+  }
+
+  showAppsMenu(event: Event) {
+    this.appsMenu.toggle(event)
   }
 
   toggleDarkMode() {

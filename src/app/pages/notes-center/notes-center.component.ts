@@ -1,15 +1,9 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, signal, ViewChild } from '@angular/core';
 import { BreadcrumbComponent } from '../../shared/components/breadcrumb/breadcrumb.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { ControlBarComponent } from './components/control-bar/control-bar.component';
 import { CommonModule } from '@angular/common';
-
-interface Note {
-  id: number;
-  title: string;
-  content: string;
-  createdAt: Date;
-}
+import { Note } from './models/note.model';
 
 @Component({
   selector: 'app-notes-center',
@@ -20,8 +14,18 @@ interface Note {
 })
 export class NotesCenterComponent {
   @ViewChild(NotesComponent) notesComponent!: NotesComponent;
-
+  
+  // signal para filtrar las notas importantes
+  filterImportant = signal(false);
   onNoteAdded(note: Note) {
     this.notesComponent.addNote(note);
+  }
+
+  onShowAllNotes() {
+    this.filterImportant.set(false);
+  }
+
+  onToggleImportantNotes() {
+    this.filterImportant.set(true);
   }
 }

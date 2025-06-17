@@ -1,12 +1,11 @@
 import { Component, computed, inject } from '@angular/core'
 import { ButtonModule } from 'primeng/button'
 import { StyleClassModule } from 'primeng/styleclass'
-import { ConfiguratorComponent } from '../configurator/configurator.component'
-import { LayoutService } from '../../service/layout.service'
+import { LayoutService } from '../../../services/layout.service'
 
 @Component({
   selector: 'app-floating-configurator',
-  imports: [ButtonModule, StyleClassModule, ConfiguratorComponent],
+  imports: [ButtonModule, StyleClassModule],
   templateUrl: './floatingconfigurator.component.html',
 })
 export class FloatingConfiguratorComponent {

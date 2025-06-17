@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs'
 import { CommonModule } from '@angular/common'
 import { RippleModule } from 'primeng/ripple'
 import { MenuItem } from 'primeng/api'
-import { LayoutService } from '../../service/layout.service'
+import { LayoutService } from '../../../services/layout.service'
 
 @Component({
   selector: 'app-menu-content',

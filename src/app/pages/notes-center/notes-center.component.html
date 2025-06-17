@@ -1,9 +1,15 @@
 <app-breadcrumb></app-breadcrumb>
 <div class="grid">
-    <app-control-bar (noteAdded)="onNoteAdded($event)"></app-control-bar>
+    <app-control-bar 
+    (noteAdded)="onNoteAdded($event)"
+    (showImportantNotes)="onToggleImportantNotes()"
+    (showAllNotes)="onShowAllNotes()"   
+    ></app-control-bar>
 </div>
 <div class="grid grid-cols-12 gap-8 mt-4">
     <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-        <app-notes></app-notes>
+        <app-notes
+        [filterImportant]="filterImportant()"
+        ></app-notes>
     </div>
 </div>

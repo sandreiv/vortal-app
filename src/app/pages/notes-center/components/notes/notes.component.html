@@ -1,6 +1,9 @@
 <div class="notes-container">
-  @for (note of notes(); track note.id) {
-    <div class="note-card" [class.style-modern]="currentStyle() === 'modern'" [class.style-minimal]="currentStyle() === 'minimal'">
+  @for (note of filteredNotes(); track note.id) {
+    <div class="note-card" 
+    [class.important]="note.isImportant"
+    [class.style-modern]="currentStyle() === 'modern'" 
+    [class.style-minimal]="currentStyle() === 'minimal'">
       <div class="note-header">
         <h3 class="note-title">{{ note.title }}</h3>
         <span class="note-date">{{ note.createdAt | date:'short' }}</span>
@@ -8,6 +11,12 @@
       <div class="note-content">
         {{ note.content }}
       </div>
+      <app-notes-menu
+        [noteId]="note.id"
+        (importantMode)="selectImportant($event)"
+        (editMode)="editNote($event)"
+        (deleteMode)="deleteNote($event)"
+      ></app-notes-menu>
     </div>
   }
 </div>
