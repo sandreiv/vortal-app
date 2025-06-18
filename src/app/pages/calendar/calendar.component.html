@@ -2,8 +2,6 @@
 <div class="grid grid-cols-12 gap-8 mt-4">
   <div class="col-span-12 xl:col-span-8">
     <app-calendar-app></app-calendar-app>
-
-    <!-- Zona de papelera (visible solo durante drag) -->
     <div
       id="trash-bin"
       class="fixed bottom-6 right-6 z-50 w-16 h-16 border border-gray-500 rounded-full flex items-center justify-center shadow transition-opacity duration-300 bg-transparent"
@@ -17,7 +15,7 @@
   <div class="col-span-12 xl:col-span-4">
     <app-to-do
       [todoListSignal]="todos"
-      [todoAdded]="onTodoAdded.bind(this)"
+      (todoAdded)="onTodoAdded($event)"
       [removeEventByTodoId]="removeEventByTodoId.bind(this)">
     </app-to-do>
   </div>
@@ -68,10 +66,6 @@
                   (click)="selectColor(color.value)"
                   class="rounded-circle"
                   [ngStyle]="{
-                <div
-                  (click)="selectColor(color.value)"
-                  class="rounded-circle"
-                  [ngStyle]="{
                     width: '30px',
                     height: '30px',
                     backgroundColor: color.value,
@@ -82,8 +76,7 @@
                     cursor: 'pointer',
                   }"
                   [title]="color.label"></div>
-                  [title]="color.label"></div>
-              }
+                }
             </div>
           </div>
 
@@ -117,11 +110,7 @@
           Close
         </button>
         <button type="button" class="btn btn-primary" (click)="addEvent()">
-          {
-            selectedEvent()
-              ? (isEditingTodo() ? 'Actualizar Tarea' : 'Actualizar Evento')
-              : (isEditingTodo() ? 'Agregar Tarea' : 'Agregar Evento')
-          }
+          {{ selectedEvent() ? (isEditingTodo() ? 'Actualizar Tarea' : 'Actualizar Evento') : (isEditingTodo() ? 'Agregar Tarea' : 'Agregar Evento') }}
         </button>
       </div>
     </div>

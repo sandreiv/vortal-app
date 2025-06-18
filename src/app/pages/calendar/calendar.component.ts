@@ -36,6 +36,7 @@ interface EventData {
     NgStyle,
     CalendarAppComponent,
     ToDoComponent,
+    BreadcrumbComponent,
   ],
 })
 export class CalendarComponent implements AfterViewInit {

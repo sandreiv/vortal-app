@@ -27,6 +27,10 @@
       @for (color of colorOptions; track color.value) {
         <div
           (click)="selectedColor.set(color.value)"
+          (keyup.enter)="selectedColor.set(color.value)"
+          (keydown.enter)="selectedColor.set(color.value)"
+          (keypress)="selectedColor.set(color.value)"
+          tabindex="0"
           class="rounded-full"
           [ngStyle]="{
             width: '30px',
