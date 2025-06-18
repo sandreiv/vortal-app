@@ -63,10 +63,7 @@ export class ToDoComponent {
   }
 
   deleteTodo(todo: TodoItem) {
-    // Solicitar al padre que elimine la tarea
-    if (this.removeEventByTodoId) {
-      this.removeEventByTodoId()?.(todo.id)
-    }
+    this.removeEventByTodoId?.()?.(todo.id);
   }
 
   todos() {

@@ -9,6 +9,7 @@ import { Modal, Toast } from 'bootstrap'
 import { CalendarAppComponent } from './components/calendar-app/calendar-app.component'
 import { ToDoComponent } from './components/to-do/to-do.component'
 import { BreadcrumbComponent } from '../../shared/components/breadcrumb/breadcrumb.component'
+import Swal from 'sweetalert2'
 
 interface TodoItem {
   id: number
@@ -240,7 +241,10 @@ export class CalendarComponent implements AfterViewInit {
         const isTodo = info.event.extendedProps['isTodo']
         if (isTodo) {
           info.revert()
-          alert('No puedes expandir eventos de la lista de tareas durante varios días.')
+          Swal.fire({
+            title: 'No se puede expandir una tarea a varios días.',
+            icon: 'error',
+          })
         }
       },
     })
@@ -256,5 +260,6 @@ export class CalendarComponent implements AfterViewInit {
       event.remove()
       this.showDeleteToast()
     }
+    this.todos.update((items) => items.filter((t) => t.id !== todoId));
   }
 }
