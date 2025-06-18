@@ -68,6 +68,14 @@ export class CalendarComponent implements AfterViewInit {
     return this.isEditingTodo()
   }
 
+  private formatDate(date: Date | null): string {
+    return date ? date.toISOString().split('T')[0] : ''
+  }
+
+  private sortTodos(todos: TodoItem[]): TodoItem[] {
+    return todos.slice().sort((a, b) => a.date.localeCompare(b.date))
+  }
+
   updateEventTitle(title: string) {
     this.newEvent.update((e) => ({ ...e, title }))
   }
@@ -97,14 +105,13 @@ export class CalendarComponent implements AfterViewInit {
       selected.setProp('backgroundColor', data.color)
       selected.setProp('borderColor', data.color)
 
-      // 🔁 Si es tarea, actualizar también en lista
       if (isTodo) {
         const todoId = selected.extendedProps['todoId']
-        this.todos.update((items) =>
-          items.map((t) =>
+        const updated = this.todos()
+          .map((t) =>
             t.id === todoId ? { ...t, title: data.title, date: data.start, color: data.color } : t
           )
-        )
+        this.todos.set(this.sortTodos(updated))
       }
     } else {
       const event: EventInput = {
@@ -121,7 +128,9 @@ export class CalendarComponent implements AfterViewInit {
   }
 
   onTodoAdded(todo: TodoItem) {
-    this.todos.update((items) => [...items, todo])
+    const updated = [...this.todos(), todo]
+    this.todos.set(this.sortTodos(updated))
+
     const event: EventInput = {
       title: todo.title,
       start: todo.date,
@@ -132,6 +141,7 @@ export class CalendarComponent implements AfterViewInit {
         isTodo: true,
       },
     }
+
     this.calendar.addEvent(event)
   }
 
@@ -145,10 +155,6 @@ export class CalendarComponent implements AfterViewInit {
       const modal = Modal.getInstance(modalEl)
       modal?.hide()
     }
-  }
-
-  private formatDate(date: Date | null): string {
-    return date ? date.toISOString().split('T')[0] : ''
   }
 
   private showDeleteToast() {
@@ -208,7 +214,10 @@ export class CalendarComponent implements AfterViewInit {
           const rect = trashEl.getBoundingClientRect()
           const { clientX, clientY } = info.jsEvent
           const isOverTrash =
-            clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom
+            clientX >= rect.left &&
+            clientX <= rect.right &&
+            clientY >= rect.top &&
+            clientY <= rect.bottom
 
           if (isOverTrash) {
             const event = info.event
@@ -231,9 +240,10 @@ export class CalendarComponent implements AfterViewInit {
 
         if (event.extendedProps['isTodo'] && event.extendedProps['todoId']) {
           const todoId = event.extendedProps['todoId']
-          this.todos.update((items) =>
-            items.map((t) => (t.id === todoId ? { ...t, date: newDate } : t))
+          const updated = this.todos().map((t) =>
+            t.id === todoId ? { ...t, date: newDate } : t
           )
+          this.todos.set(this.sortTodos(updated))
         }
       },
 
@@ -253,9 +263,9 @@ export class CalendarComponent implements AfterViewInit {
   }
 
   public removeEventByTodoId(todoId: number): void {
-    const event = this.calendar.getEvents().find(
-      (e) => e.extendedProps['todoId'] === todoId
-    )
+    const event = this.calendar
+      .getEvents()
+      .find((e) => e.extendedProps['todoId'] === todoId)
     if (event) {
       event.remove()
       this.showDeleteToast()
