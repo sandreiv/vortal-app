@@ -14,11 +14,12 @@ import { Note } from './models/note.model';
 })
 export class NotesCenterComponent {
   @ViewChild(NotesComponent) notesComponent!: NotesComponent;
-  
+  @ViewChild(ControlBarComponent) controlBarComponent!: ControlBarComponent;
   // signal para filtrar las notas importantes. Componente padre.
   // se inicializa en false para mostrar todas las notas.
   // 1. primer paso del flujo de datos.
   filterImportant = signal(false);
+  noteToEdit = signal<number | null>(null);
 
   onNoteAdded(note: Note) {
     this.notesComponent.addNote(note);
@@ -33,5 +34,10 @@ export class NotesCenterComponent {
 
   onShowImportantNotes() {
     this.filterImportant.set(true);
+  }
+
+  onEditNote(note: Note) {
+    //enlazando al componente hijo (hermano de notesComponent) controlBar
+    this.controlBarComponent.editNote(note);
   }
 }

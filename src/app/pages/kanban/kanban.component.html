@@ -3,7 +3,7 @@
   
   <div class="col-span-12 xl:col-span-4">
     <div
-      class="kanban-column"
+      class="kanban-column pendientes"
       cdkDropList
       #pendientesList="cdkDropList"
       [cdkDropListData]="pendientes()"
@@ -11,7 +11,11 @@
       (cdkDropListDropped)="drop($event)"
       [class.style-modern]="currentStyle() === 'modern'"
       [class.style-minimal]="currentStyle() === 'minimal'">
-      <h3 class="column-header">Pendientes</h3>
+      <h3 class="column-header">
+        <span>Pendientes</span>
+        <i class="i pendientes pi pi-list"></i>
+      </h3>
+      
       @for (task of pendientes(); track task.id) {
         <div class="task-card" cdkDrag>
           <div class="task-header flex justify-between">
@@ -29,7 +33,7 @@
 
   <div class="col-span-12 xl:col-span-4">
     <div
-      class="kanban-column"
+      class="kanban-column en-progreso"
       cdkDropList
       #enProgresoList="cdkDropList"
       [cdkDropListData]="enProgreso()"
@@ -37,7 +41,10 @@
       (cdkDropListDropped)="drop($event)"
       [class.style-modern]="currentStyle() === 'modern'"
       [class.style-minimal]="currentStyle() === 'minimal'">
-      <h3 class="column-header">En Progreso</h3>
+      <h3 class="column-header">
+        <span>En Progreso</span>
+        <i class="i en-progreso pi pi-gauge"></i>
+      </h3>
       @for (task of enProgreso(); track task.id) {
         <div class="task-card" cdkDrag>
           <div class="task-header flex justify-between">
@@ -55,7 +62,7 @@
 
   <div class="col-span-12 xl:col-span-4">
     <div
-      class="kanban-column"
+      class="kanban-column completadas"
       cdkDropList
       #completadasList="cdkDropList"
       [cdkDropListData]="completadas()"
@@ -63,7 +70,10 @@
       (cdkDropListDropped)="drop($event)"
       [class.style-modern]="currentStyle() === 'modern'"
       [class.style-minimal]="currentStyle() === 'minimal'">
-      <h3 class="column-header">Completadas</h3>
+      <h3 class="column-header">
+        <span>Completadas</span>
+        <i class="i completadas pi pi-list-check"></i>
+      </h3>
       @for (task of completadas(); track task.id) {
         <div class="task-card" cdkDrag>
           <div class="task-header flex justify-between">

@@ -9,7 +9,7 @@ interface TodoItem {
   title: string
   completed: boolean
   date: string
-  color: string // ← Nuevo campo agregado
+  color: string
 }
 
 @Component({
@@ -30,11 +30,11 @@ export class ToDoComponent {
   selectedColor = signal('#F56565') // ← Color por defecto (rojo)
 
   colorOptions = [
-    { label: 'Red', value: '#F56565' },
-    { label: 'Green', value: '#68D391' },
-    { label: 'Blue', value: '#63B3ED' },
-    { label: 'Yellow', value: '#FBD38D' },
-    { label: 'Purple', value: '#B794F4' },
+    { label: 'Red', value: '#FA896B' },
+    { label: 'Green', value: '#13DEB9' },
+    { label: 'Blue', value: '#44B7F7' },
+    { label: 'Yellow', value: '#FFAE1F' },
+    { label: 'Purple', value: '#5D87FF' },
     { label: 'Gray', value: '#A0AEC0' },
   ]
 

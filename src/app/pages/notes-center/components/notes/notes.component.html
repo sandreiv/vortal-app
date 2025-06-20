@@ -1,11 +1,15 @@
-<div class="notes-container">
+<div class="notes-grid">
   @for (note of filteredNotes(); track note.id) {
     <div class="note-card" 
-    [class.important]="note.isImportant"
-    [class.style-modern]="currentStyle() === 'modern'" 
-    [class.style-minimal]="currentStyle() === 'minimal'">
+      [ngStyle]="{ 
+        'border': currentStyle() === 'modern' ? 'none' : '2px solid ' + (note.color || '#ccc'),
+        'background-color': getLightColor(note.color)
+      }"
+      [class.important]="note.isImportant"
+      [class.style-modern]="currentStyle() === 'modern'" 
+      [class.style-minimal]="currentStyle() === 'minimal'">
       <div class="note-header">
-        <h3 class="note-title">{{ note.title }}</h3>
+        <h3 class="note-title" [ngStyle]="{ 'color': note.color }">{{ note.title }}</h3>
         <span class="note-date">{{ note.createdAt | date:'short' }}</span>
       </div>
       <div class="note-content">
@@ -14,7 +18,7 @@
       <app-notes-menu
         [noteId]="note.id"
         (importantMode)="selectImportant($event)"
-        (editMode)="editNote($event)"
+        (editMode)="editNote(note.id)"
         (deleteMode)="deleteNote($event)"
       ></app-notes-menu>
     </div>

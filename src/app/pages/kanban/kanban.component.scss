@@ -68,6 +68,18 @@
       }
     }
   }
+
+  &.pendientes {
+    border: 2px solid #44B7F7;
+  }
+
+  &.en-progreso {
+    border: 2px solid #FFAE1F;
+  }
+
+  &.completadas {
+    border: 2px solid #13DEB9;
+  }
 }
 
 .column-header {
@@ -75,8 +87,18 @@
   padding: 0.5rem;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #333;
   border-bottom: 2px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    flex: 1;
+  }
+
+  i {
+    margin-left: auto;
+  }
 }
 
 .task-card {
@@ -114,4 +136,30 @@
   margin: 0;
   font-size: 0.9rem;
   color: #666;
+}
+
+.kanban-column.pendientes .task-card {
+  background: #ECF8FF;
+}
+
+.kanban-column.en-progreso .task-card {
+  background: #FEF5E5;
+}
+
+.kanban-column.completadas .task-card {
+  background: #E6FFFA;
+}
+
+.i{
+  font-size: 1.5rem;
+
+  &.pendientes{
+    color: #44B7F7;
+  }
+  &.en-progreso{
+    color: #FFAE1F;
+  }
+  &.completadas{
+    color: #13DEB9;
+  }
 }

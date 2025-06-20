@@ -1,24 +1,43 @@
-<div class="card-control-bar mb-4 flex justify-center gap-8"
+<div class="card-control-bar-container">
+  <div class="card-control-bar mb-4 flex justify-center gap-8"
     [class.style-modern]="currentStyle() === 'modern'"
     [class.style-minimal]="currentStyle() === 'minimal'">
-        <div class="flex items-center justify-center gap-2">
-            <button class="btn btn-primary" (click)="showAllNotes.emit()">
-                <i class="pi pi-list"></i>
-                Todas las notas
-            </button>
-        </div>
-        <div class="flex items-center justify-center gap-2">
-            <button class="btn btn-primary" (click)="showImportantNotes.emit()">
-                <i class="pi pi-star"></i>
-                Importantes
-            </button>
-        </div>
-        <div class="flex items-center justify-center gap-2">
-            <button class="btn btn-primary" (click)="openModal()">
-                <i class="pi pi-plus"></i>
-                Agregar Nota
-            </button>
-        </div>
+
+    <!-- Botón Todas las notas -->
+    <div class="flex items-center justify-center gap-2">
+      <button
+        class="btn"
+        [ngClass]="{
+          'btn-primary': selectedButton() === 'all',
+          'bg-transparent text-black': selectedButton() !== 'all'
+        }"
+        (click)="handleAllNotes()"
+      >
+        <i class="pi pi-list"></i> Todas las notas
+      </button>
+    </div>
+
+    <!-- Botón Importantes -->
+    <div class="flex items-center justify-center gap-2">
+      <button
+        class="btn"
+        [ngClass]="{
+          'btn-primary': selectedButton() === 'important',
+          'bg-transparent text-black ': selectedButton() !== 'important'
+        }"
+        (click)="handleImportantNotes()"
+      >
+        <i class="pi pi-star"></i> Importantes
+      </button>
+    </div>
+
+    <!-- Botón Agregar (no se marca como activo) -->
+    <div class="flex items-center justify-center gap-2">
+      <button class="btn btn-primary" (click)="openModal()">
+        <i class="pi pi-plus"></i> Agregar Nota
+      </button>
+    </div>
+  </div>
 </div>
 
 <div class="modal" [class.show]="isModalOpen()" tabindex="-1" role="dialog" aria-hidden="true">
@@ -32,11 +51,46 @@
                 <form (ngSubmit)="addNote()">
                     <div class="mb-3">
                         <label for="noteTitle" class="form-label">Título</label>
-                        <input type="text" class="form-control" id="noteTitle" [(ngModel)]="newNoteTitle" name="title" required>
+                        <input type="text" class="form-control" id="noteTitle" [(ngModel)]="noteTitle " name="title" required>
                     </div>
                     <div class="mb-3">
                         <label for="noteContent" class="form-label">Contenido</label>
-                        <textarea class="form-control" id="noteContent" [(ngModel)]="newNoteContent" name="content" required></textarea>
+                        <textarea 
+                            class="form-control" 
+                            id="noteContent" 
+                            [(ngModel)]="noteContent" 
+                            name="content" 
+                            required
+                            maxlength="200"
+                            (input)="onContentInput($event)"
+                            [class.is-invalid]="isContentTooLong()"
+                            placeholder="Escribe el contenido de tu nota..."></textarea>
+                        <div class="d-flex justify-content-between align-items-center mt-1">
+                            <small [class.text-danger]="isContentTooLong()" [class.text-muted]="!isContentTooLong()">
+                                {{ noteContent().length }}/200
+                            </small>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="noteColor" class="form-label">Color</label>
+                      <div class="d-flex flex-wrap gap-2">
+                        @for (color of colorOptions; track color.value) {
+                          <div
+                            (click)="selectColor(color.value)"
+                            class="rounded-circle"
+                            [ngStyle]="{
+                              width: '30px',
+                              height: '30px',
+                              backgroundColor: color.value,
+                              border:
+                                noteColor() === color.value
+                                  ? '3px solid #000'
+                                  : '2px solid #ccc',
+                              cursor: 'pointer',
+                            }"
+                            [title]="color.label"></div>
+                          }
+                      </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>

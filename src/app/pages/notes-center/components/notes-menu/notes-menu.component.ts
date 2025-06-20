@@ -1,4 +1,4 @@
-import { Component, computed, input, output } from '@angular/core';
+import { Component, computed, input, output, signal } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { MenuModule } from 'primeng/menu'
 import { ButtonModule } from 'primeng/button'
@@ -44,5 +44,6 @@ export class NotesMenuComponent {
     }
   ])
 
-
+  editNoteId = input<number | null>();
+  isEditMode = signal(false);
 }

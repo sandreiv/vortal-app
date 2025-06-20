@@ -1,4 +1,4 @@
-import { Component, computed, input, signal } from '@angular/core';
+import { Component, computed, input, output, signal } from '@angular/core';
 import { StyleService } from '../../../../services/style.service';
 import { CommonModule } from '@angular/common';
 import { NotesMenuComponent } from '../notes-menu/notes-menu.component';
@@ -15,16 +15,51 @@ export class NotesComponent {
   currentStyle = computed(() => this.styleService.currentStyle())
   notes = signal<Note[]>([])
 
+  readonly noteEdited = output<Note>()
   // input para filtrar las notas importantes
   // se inicializa en false para mostrar todas las notas.
   // se recibe del componente padre. Actualiza solo cuando el componente padre cambia.
   // 3. tercer paso del flujo de datos.
   filterImportant = input<boolean>()
 
+
+  // Array de colores claros correspondientes
+  lightColors = [
+    { label: 'Red', value: '#FBF2EF' },
+    { label: 'Green', value: '#E6FFFA' },
+    { label: 'Blue', value: '#ECF8FF' },
+    { label: 'Yellow', value: '#FEF5E5' },
+    { label: 'Purple', value: '#EEF3FF' },
+    { label: 'Gray', value: '#F8F8F8' },
+  ]
+
+  // Array de colores originales para mapear
+  colorOptions = [
+    { label: 'Red', value: '#FA896B' },
+    { label: 'Green', value: '#13DEB9' },
+    { label: 'Blue', value: '#44B7F7' },
+    { label: 'Yellow', value: '#FFAE1F' },
+    { label: 'Purple', value: '#5D87FF' },
+    { label: 'Gray', value: '#A0AEC0' },
+  ]
+
   constructor(private styleService: StyleService) {}
 
   addNote(note: Note) {
-    this.notes.update(notes => [note, ...notes])
+    this.notes.update(notes => {
+      const index = notes.findIndex(n => n.id === note.id);
+      let newNotes;
+      if (index !== -1) {
+        // se agrega esta lógica para reemplazar la nota existente (edicion).
+        newNotes = [...notes]; // copia de la nota existente.
+        newNotes[index] = note; // se reemplaza la nota con el index encontrado con la nota recibida como parametro
+      } else {
+        // Agregar nueva nota
+        newNotes = [note, ...notes];
+      }
+      // limitar a máximo 12 notas
+      return newNotes.slice(0, 12);
+    });
   }
 
   selectImportant(id: number) {
@@ -35,9 +70,16 @@ export class NotesComponent {
       )
     )
   }
-  
+
+
   editNote(id: number) {
-    console.log('Editar nota con ID:', id);
+    this.notes.update(notes => {
+      const noteToEdit = notes.find(note => note.id === id)
+      if(noteToEdit){
+        this.noteEdited.emit(noteToEdit)
+      }
+      return notes
+    })
   }
   
   deleteNote(id: number) {
@@ -52,4 +94,17 @@ export class NotesComponent {
     const allNotes = this.notes();
     return this.filterImportant() ? allNotes.filter(n => n.isImportant) : allNotes;
   });
+
+  getNoteColor(color: string) {
+    return color
+  }
+
+  // Método para obtener el color claro correspondiente
+  getLightColor(color: string): string {
+    const colorIndex = this.colorOptions.findIndex(option => option.value === color);
+    if (colorIndex !== -1) {
+      return this.lightColors[colorIndex].value;
+    }
+    return '#ffffff'; // Color por defecto si no se encuentra
+  }
 }

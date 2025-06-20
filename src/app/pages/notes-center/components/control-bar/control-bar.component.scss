@@ -1,3 +1,10 @@
+.card-control-bar-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
 .card-control-bar {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     transition: all 0.3s ease;
@@ -9,6 +16,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: fit-content;
+    padding: 0 2rem;
+    
     &.fullscreen {
       position: fixed;
       top: 0;
@@ -164,5 +174,24 @@
     textarea.form-control {
         min-height: 100px;
         resize: vertical;
+    }
+
+    .form-control.is-invalid {
+        border-color: #dc3545;
+        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+    }
+
+    .text-danger {
+        color: #dc3545 !important;
+    }
+}
+
+.btn-primary {
+    background-color: #5D87FF;
+    border-color: #5D87FF;
+
+    &:hover {
+        background-color: #4F73D9;
+        border-color: #4F73D9;
     }
 }

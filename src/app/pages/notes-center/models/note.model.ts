@@ -4,4 +4,5 @@ export interface Note {
   content: string;
   createdAt: Date;
   isImportant: boolean;
+  color: string;
 } 
